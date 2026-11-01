@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Control NFL 2026</title><script>(function(){try{var t=localStorage.getItem("nfl-2026-tema")||"oscuro";if(t==="claro")document.documentElement.setAttribute("data-theme","claro")}catch(e){}})();</script><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E">
 <style>
-:root{color-scheme:dark;--bg:#090f1c;--panel:#121d30;--panel2:#192940;--line:#30405b;--txt:#f5f8ff;--muted:#9faec4;--green:#61dbaf;--red:#ff898f;--amber:#f9c781;--blue:#8ec0ff;--glow:radial-gradient(ellipse at 88% 0%,#173551,transparent 45%);--metric-bg:#0e1b2e;--metric-line:#2b405d;--line2:#293952;--track:#273449;--input-bg:#0e1b2e;--input-line:#41526d;--btn-bg:#244567;--btn-line:#395671;--btn-alt-bg:#176c61;--btn-alt-line:#2c9887;--live-bg:#2a1420;--live-line:#6b3038;--stale-bg:#2a1f12;--stale-line:#5e4526;--res-ok-line:#2c6b58;--res-no-line:#6b3038;--res-amb-line:#6b5730;--btn-txt:#fff}
-html[data-theme="claro"]{color-scheme:light;--bg:#f4f7fc;--panel:#ffffff;--panel2:#eaf0f9;--line:#d3ddeb;--txt:#15202e;--muted:#5b6b81;--green:#07794f;--red:#c02736;--amber:#9a6606;--blue:#1f5b9c;--glow:radial-gradient(ellipse at 88% 0%,#d8e6fb,transparent 45%);--metric-bg:#ffffff;--metric-line:#dde5f0;--line2:#e5ebf4;--track:#dde4ee;--input-bg:#ffffff;--input-line:#bfcbdd;--btn-bg:#234563;--btn-line:#2f5678;--btn-alt-bg:#0b7a66;--btn-alt-line:#12a48d;--live-bg:#fdecec;--live-line:#e3b3b8;--stale-bg:#fdf4e3;--stale-line:#e2ce9f;--res-ok-line:#a8ddc6;--res-no-line:#eeb6ba;--res-amb-line:#e9d6a5;--btn-txt:#fff}*{box-sizing:border-box}body{margin:0;background:var(--glow),var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--txt)}main{max-width:1170px;margin:auto;padding:24px 14px 55px}h1{font-size:clamp(29px,4vw,43px);letter-spacing:-.04em;margin:3px 0 8px}h2{font-size:23px;margin:0 0 7px}p{color:var(--muted);line-height:1.6;margin:4px 0}.eyebrow{color:var(--green);font-size:12px;letter-spacing:.13em;font-weight:800;text-transform:uppercase}.head{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin:0 0 20px}.headright{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.tema{width:42px;height:42px;padding:0;font-size:19px;line-height:1;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}.pill,.badge{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:18px;white-space:nowrap}.badge{color:var(--amber)}.badge.ok{color:var(--green)}.badge.no{color:var(--red)}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:23px}.stat,.card,.note{background:var(--panel);border:1px solid var(--line);border-radius:15px}.stat{padding:17px}.stat span,.metric span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin:4px 0}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.card{padding:20px;margin:0 0 15px}.cardtop{display:flex;gap:15px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.cardtop .badge{margin-top:2px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.metric{background:var(--metric-bg);border:1px solid var(--metric-line);border-radius:10px;padding:12px}.metric strong{display:block;margin-top:5px;font-size:20px}.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:680px}td,th{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line2);font-size:13px}th{background:var(--panel2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border-bottom:0}td b{display:block;font-size:14px}td small{color:var(--muted);display:block;margin-top:3px;font-size:11px}.ticketfoot{margin:13px 0 0;font-size:12px;color:var(--muted)}.tools{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.bar{height:9px;border-radius:9px;background:var(--track);overflow:hidden;margin:14px 0 24px}.bar>div{height:100%;background:var(--green)}.footgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.note{padding:15px}.note h3{font-size:15px;margin:0 0 8px}.note p{font-size:13px}.hint{margin:12px 0 21px;font-size:12px;color:var(--muted)}.sidehead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:25px 0 13px}.weekbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 18px}.weekbar label{font-size:12px;color:var(--muted)}select,input{background:var(--input-bg);color:var(--txt);font:inherit;font-size:13px;padding:9px 8px;border:1px solid var(--input-line);border-radius:9px}button{font:inherit;font-weight:700;border:1px solid var(--btn-line);color:var(--btn-txt);background:var(--btn-bg);border-radius:10px;padding:10px 13px;cursor:pointer}button:hover{filter:brightness(1.15)}button.alt{background:var(--btn-alt-bg);border-color:var(--btn-alt-line)}button.redbtn{background:transparent;color:var(--red);border-color:var(--live-line)}.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--live-line);background:var(--live-bg);color:var(--red);white-space:nowrap}.live b{color:var(--txt);font-size:12px}.live.on{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.62}}.vivos{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}.vivocard{background:var(--metric-bg);border:1px solid var(--line);border-radius:11px;padding:12px}.vivocard .vtop{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px}.vivocard .vscore{font-size:19px;font-weight:700;letter-spacing:-.02em}.vivocard .vteams{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);gap:8px}.vivocard .vteams span:first-child{text-align:left}.vivocard .vteams span:last-child{text-align:right}.vdetalle{font-size:11px;color:var(--muted);margin-top:6px}.stale{background:var(--stale-bg);border-color:var(--stale-line);color:var(--amber);padding:11px 14px;border-radius:11px;font-size:13px;margin:0 0 16px}.loading{color:var(--muted);font-size:13px;padding:24px 0}.res{display:inline-block;font-size:11px;padding:3px 8px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}.res.Ganada,.res.Acertado{color:var(--green);border-color:var(--res-ok-line)}.res.Perdida,.res.Fallado{color:var(--red);border-color:var(--res-no-line)}.res.Anulada,.res.Anulado{color:var(--amber);border-color:var(--res-amb-line)}.res.Revisión{color:var(--amber);border-color:var(--res-amb-line)}
+:root{color-scheme:dark;--bg:#090f1c;--panel:#121d30;--panel2:#192940;--line:#30405b;--txt:#f5f8ff;--muted:#9faec4;--green:#61dbaf;--red:#ff898f;--amber:#f9c781;--blue:#8ec0ff;--glow:radial-gradient(ellipse at 88% 0%,#173551,transparent 45%);--metric-bg:#0e1b2e;--metric-line:#2b405d;--line2:#293952;--track:#273449;--input-bg:#0e1b2e;--input-line:#41526d;--btn-bg:#244567;--btn-line:#395671;--btn-alt-bg:#176c61;--btn-alt-line:#2c9887;--live-bg:#2a1420;--live-line:#6b3038;--stale-bg:#2a1f12;--stale-line:#5e4526;--res-ok-line:#2c6b58;--res-no-line:#6b3038;--res-amb-line:#6b5730;--btn-txt:#fff;--res-ok-bg:rgba(97,219,175,.10);--res-no-bg:rgba(255,137,143,.10);--res-amb-bg:rgba(249,199,129,.10)}
+html[data-theme="claro"]{color-scheme:light;--bg:#f4f7fc;--panel:#ffffff;--panel2:#eaf0f9;--line:#d3ddeb;--txt:#15202e;--muted:#5b6b81;--green:#07794f;--red:#c02736;--amber:#9a6606;--blue:#1f5b9c;--glow:radial-gradient(ellipse at 88% 0%,#d8e6fb,transparent 45%);--metric-bg:#ffffff;--metric-line:#dde5f0;--line2:#e5ebf4;--track:#dde4ee;--input-bg:#ffffff;--input-line:#bfcbdd;--btn-bg:#234563;--btn-line:#2f5678;--btn-alt-bg:#0b7a66;--btn-alt-line:#12a48d;--live-bg:#fdecec;--live-line:#e3b3b8;--stale-bg:#fdf4e3;--stale-line:#e2ce9f;--res-ok-line:#a8ddc6;--res-no-line:#eeb6ba;--res-amb-line:#e9d6a5;--btn-txt:#fff;--res-ok-bg:rgba(11,121,79,.09);--res-no-bg:rgba(192,39,54,.09);--res-amb-bg:rgba(154,102,6,.09)}*{box-sizing:border-box}body{margin:0;background:var(--glow),var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--txt)}main{max-width:1170px;margin:auto;padding:24px 14px 55px}h1{font-size:clamp(29px,4vw,43px);letter-spacing:-.04em;margin:3px 0 8px}h2{font-size:23px;margin:0 0 7px}p{color:var(--muted);line-height:1.6;margin:4px 0}.eyebrow{color:var(--green);font-size:12px;letter-spacing:.13em;font-weight:800;text-transform:uppercase}.head{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin:0 0 20px}.headright{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.tema{width:42px;height:42px;padding:0;font-size:19px;line-height:1;border-radius:11px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}.pill,.badge{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:18px;white-space:nowrap}.badge{color:var(--amber)}.badge.ok{color:var(--green)}.badge.no{color:var(--red)}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:23px}.stat,.card,.note{background:var(--panel);border:1px solid var(--line);border-radius:15px}.stat{padding:17px}.stat span,.metric span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin:4px 0}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.card{padding:20px;margin:0 0 15px}.cardtop{display:flex;gap:15px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.cardtop .badge{margin-top:2px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.metric{background:var(--metric-bg);border:1px solid var(--metric-line);border-radius:10px;padding:12px}.metric strong{display:block;margin-top:5px;font-size:20px}.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:680px}td,th{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line2);font-size:13px}th{background:var(--panel2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border-bottom:0}td b{display:block;font-size:14px}td small{color:var(--muted);display:block;margin-top:3px;font-size:11px}.ticketfoot{margin:13px 0 0;font-size:12px;color:var(--muted)}.tools{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.bar{height:9px;border-radius:9px;background:var(--track);overflow:hidden;margin:14px 0 24px}.bar>div{height:100%;background:var(--green)}.footgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.note{padding:15px}.note h3{font-size:15px;margin:0 0 8px}.note p{font-size:13px}.hint{margin:12px 0 21px;font-size:12px;color:var(--muted)}.sidehead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:25px 0 13px}.weekbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 18px}.weekbar label{font-size:12px;color:var(--muted)}select,input{background:var(--input-bg);color:var(--txt);font:inherit;font-size:13px;padding:9px 8px;border:1px solid var(--input-line);border-radius:9px}button{font:inherit;font-weight:700;border:1px solid var(--btn-line);color:var(--btn-txt);background:var(--btn-bg);border-radius:10px;padding:10px 13px;cursor:pointer}button:hover{filter:brightness(1.15)}button.alt{background:var(--btn-alt-bg);border-color:var(--btn-alt-line)}button.redbtn{background:transparent;color:var(--red);border-color:var(--live-line)}.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid var(--live-line);background:var(--live-bg);color:var(--red);white-space:nowrap}.live b{color:var(--txt);font-size:12px}.live.on{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.62}}.vivos{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}.vivocard{background:var(--metric-bg);border:1px solid var(--line);border-radius:11px;padding:12px}.vivocard .vtop{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px}.vivocard .vscore{font-size:19px;font-weight:700;letter-spacing:-.02em}.vivocard .vteams{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);gap:8px}.vivocard .vteams span:first-child{text-align:left}.vivocard .vteams span:last-child{text-align:right}.vdetalle{font-size:11px;color:var(--muted);margin-top:6px}.stato{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:11px;border:1px solid var(--line);white-space:nowrap;margin-left:5px;vertical-align:middle}.stato.win{color:var(--green);border-color:var(--res-ok-line);background:var(--res-ok-bg)}.stato.lose{color:var(--red);border-color:var(--res-no-line);background:var(--res-no-bg)}.stato.push{color:var(--amber);border-color:var(--res-amb-line);background:var(--res-amb-bg)}.stato.wait{color:var(--muted);background:var(--metric-bg)}.stale{background:var(--stale-bg);border-color:var(--stale-line);color:var(--amber);padding:11px 14px;border-radius:11px;font-size:13px;margin:0 0 16px}.loading{color:var(--muted);font-size:13px;padding:24px 0}.res{display:inline-block;font-size:11px;padding:3px 8px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}.res.Ganada,.res.Acertado{color:var(--green);border-color:var(--res-ok-line)}.res.Perdida,.res.Fallado{color:var(--red);border-color:var(--res-no-line)}.res.Anulada,.res.Anulado{color:var(--amber);border-color:var(--res-amb-line)}.res.Revisión{color:var(--amber);border-color:var(--res-amb-line)}
 @media(max-width:920px){.stats{grid-template-columns:repeat(3,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.card{padding:12px}.stat strong{font-size:22px}.metric strong{font-size:17px}.footgrid{grid-template-columns:1fr}}
 @media print{body{background:white;color:#111}.card,.stat,.note{color:#111;background:white;border-color:#ddd}.metric{background:white;color:#111}.pill,.badge,p,td small,.hint,.res{color:#555}.res{border-color:#ccc}button,.tools,.weekbar{display:none}}
@@ -69,6 +69,16 @@ function clasificarSeleccion(r){
   return 'Pendiente';
 }
 
+function _badgeVivo(mercado, seleccion, equipo, rival, fecha){
+  const v=_buscarVivo(fecha,equipo,rival);
+  if(!v)return '';
+  if(v.estado==='pre')return '<span class="stato wait">SIN EMPEZAR</span>';
+  const r=_liquidarVivo(mercado,seleccion,equipo,rival,v);
+  const cls=r.estado==='VA GANANDO'?'win':(r.estado==='VA PERDIENDO'?'lose':
+        (r.estado==='PUSH'?'push':'wait'));
+  return `<span class="stato ${cls}">${escapeHTML(r.estado)}</span>`;
+}
+
 function renderBoletos(){
   const container=document.getElementById('tickets');
   const sel=(DATA.selecciones||[]).filter(s=>!SEMANA||String(s.semana)===String(SEMANA));
@@ -80,10 +90,25 @@ function renderBoletos(){
   container.innerHTML=[...grupos.entries()].map(([boleto,legs])=>{
     const estado=etiquetas[boleto]||'Abierto';
     const badge=estado==='Ganado'?'ok':(estado==='Perdido'?'no':'');
-    return `<section class="card" aria-label="Boleto ${escapeHTML(boleto)}"><div class="cardtop"><div><div class="eyebrow">🎟️ ${escapeHTML(boleto)}</div><h2>${legs.length} ${legs.length===1?'selección':'selecciones'}</h2></div><div class="badge ${badge}">${escapeHTML(estado)}</div></div>
+    // Estado vivo del boleto: cuantas piernas van ganando, perdiendo o faltan.
+    let g=0,p=0,w=0;
+    for(const l of legs){
+      const v=_buscarVivo(l.fecha,l.equipo,l.rival);
+      if(!v||v.estado==='pre'){w++;continue}
+      const r=_liquidarVivo(l.mercado,l.seleccion||l.equipo,l.equipo,l.rival,v);
+      if(r.estado==='VA GANANDO')g++; else if(r.estado==='VA PERDIENDO')p++; else w++;
+    }
+    const vivoTxt=p>0?`<span class="stato lose">${p} PERDIENDO</span>`
+      :(g>0?`<span class="stato win">${g} GANANDO</span>`
+        :`<span class="stato wait">SIN EMPEZAR</span>`);
+    const faltan=w?`<span class="stato wait">${w} SIN EMPEZAR</span>`:'';
+    return `<section class="card" aria-label="Boleto ${escapeHTML(boleto)}"><div class="cardtop"><div><div class="eyebrow">🎟️ ${escapeHTML(boleto)}</div><h2>${legs.length} ${legs.length===1?'selección':'selecciones'}</h2><div style="margin-top:7px">${vivoTxt}${faltan}</div></div><div class="badge ${badge}">${escapeHTML(estado)}</div></div>
     <div class="scroll"><table><thead><tr><th>Selección</th><th>Mercado</th><th>Fecha</th><th>Momio</th><th>Resultado</th></tr></thead><tbody>${legs.map(l=>{
       const st=clasificarSeleccion(l.resultado);
-      return `<tr><td><b>${escapeHTML(l.equipo)}</b><small>vs ${escapeHTML(l.rival)}</small></td><td>${escapeHTML(l.seleccion||l.mercado)}</td><td>${escapeHTML(l.fecha)}</td><td>${escapeHTML(l.cuota_capturada)}</td><td><span class="res ${st}">${escapeHTML(l.resultado||'Pendiente')}</span>${l.marcador?`<small>${escapeHTML(l.marcador)}</small>`:''}</td></tr>`}).join('')}</tbody></table></div></section>`}).join('');
+      const vivo=_badgeVivo(l.mercado,l.seleccion||l.equipo,l.equipo,l.rival,l.fecha);
+      const vinfo=_buscarVivo(l.fecha,l.equipo,l.rival);
+      const score=vinfo&&vinfo.estado!=='pre'?`<small class="muted">${escapeHTML(vinfo.estado==='post'?'Final':(vinfo.detalle||''))} · ${escapeHTML(vinfo.visitante)} ${escapeHTML(vinfo.pv)} - ${escapeHTML(vinfo.pl)} ${escapeHTML(vinfo.local)}</small>`:'';
+      return `<tr><td><b>${escapeHTML(l.equipo)}</b><small>vs ${escapeHTML(l.rival)}</small>${score}</td><td>${escapeHTML(l.seleccion||l.mercado)}</td><td>${escapeHTML(l.fecha)}</td><td>${escapeHTML(l.cuota_capturada)}</td><td><span class="res ${st}">${escapeHTML(l.resultado||'Pendiente')}</span>${vivo}${l.marcador?`<small>${escapeHTML(l.marcador)}</small>`:''}</td></tr>`}).join('')}</tbody></table></div></section>`}).join('');
 }
 
 function renderPicks(){
@@ -92,7 +117,8 @@ function renderPicks(){
   if(!picks.length){cuerpo.innerHTML='<tr><td colspan="6">Sin pronósticos para la semana seleccionada.</td></tr>';return}
   cuerpo.innerHTML=picks.map((p,i)=>{
     const st=clasificarSeleccion(p.resultado);
-    return `<tr><td>${i+1}</td><td>${escapeHTML(p.fecha)}</td><td><b>${escapeHTML(p.pick)}</b></td><td>${escapeHTML(p.rival)}</td><td><span class="res ${st}">${escapeHTML(p.resultado||'Pendiente')}</span></td><td>${escapeHTML(p.marcador||'—')}</td></tr>`}).join('');
+    const vivo=_badgeVivo('Ganador',p.pick,p.pick,p.rival,p.fecha);
+    return `<tr><td>${i+1}</td><td>${escapeHTML(p.fecha)}</td><td><b>${escapeHTML(p.pick)}</b></td><td>${escapeHTML(p.rival)}</td><td><span class="res ${st}">${escapeHTML(p.resultado||'Pendiente')}</span>${vivo}</td><td>${escapeHTML(p.marcador||'—')}</td></tr>`}).join('');
 }
 
 function resumen(){
@@ -170,6 +196,8 @@ async function cargarVivo(){
       const info={fecha,local,visitante,
         estado:st.state||'',detalle:st.detail||'',
         periodo:(st.displayClock||st.shortDetail||'').trim()};
+      info.local=local.nombre; info.visitante=visitante.nombre;
+      info.pl=local.pts; info.pv=visitante.pts;
       porPareja.set(_clavePartido(fecha,local.nombre,visitante.nombre),info);
       porEquipo.set(fecha+'|'+_aliasEq(local.nombre),info);
       porEquipo.set(fecha+'|'+_aliasEq(visitante.nombre),info);
@@ -181,6 +209,59 @@ async function cargarVivo(){
   }
 }
 
+// --- Liquidacion en vivo (espejo de scripts/nfl_markets.py) ------------
+// Calcula si la pierna va ganando/perdiendo con el marcador ACTUAL.
+// Es informativo: el resultado oficial lo decide el sincronizador.
+function _parseSpread(txt){
+  const m=String(txt||'').match(/([+-][0-9]+(?:\.[0-9]+)?)\s*$/);
+  return m?parseFloat(m[1]):null;
+}
+function _parseLinea(txt){
+  const t=_sinAcentos(txt);
+  let m=t.match(/menos\s+de\s+([0-9]+(?:\.[0-9]+)?)/)||t.match(/mas\s+de\s+([0-9]+(?:\.[0-9]+)?)/);
+  if(m)return parseFloat(m[1]);
+  m=t.match(/^\s*under\s+([0-9]+(?:\.[0-9]+)?)\s*$/);
+  if(m)return parseFloat(m[1]);
+  m=t.match(/^\s*over\s+([0-9]+(?:\.[0-9]+)?)\s*$/);
+  return m?parseFloat(m[1]):null;
+}
+function _ladoTotal(txt){
+  const t=_sinAcentos(txt);
+  return /menos\s+de|^\s*under/.test(t)?'under':'over';
+}
+function _liquidarVivo(mercado, seleccion, equipo, rival, partido){
+  if(!partido||partido.estado==='pre')return {estado:'PENDIENTE',detalle:''};
+  const pl=Number(partido.pl), pv=Number(partido.pv);
+  if(!Number.isFinite(pl)||!Number.isFinite(pv))return {estado:'PENDIENTE',detalle:''};
+  const esLocal=_aliasEq(partido.local)===_aliasEq(equipo);
+  const mios=esLocal?pl:pv, rivalPts=esLocal?pv:pl;
+  const mk=_sinAcentos(mercado);
+  if(mk.startsWith('moneyline')||mk.startsWith('ganador')){
+    if(mios>rivalPts)return {estado:'VA GANANDO',detalle:`${mios}-${rivalPts}`};
+    if(mios<rivalPts)return {estado:'VA PERDIENDO',detalle:`${mios}-${rivalPts}`};
+    return {estado:'EMPATE',detalle:`${mios}-${rivalPts}`};
+  }
+  if(mk.startsWith('spread')||mk.startsWith('hándicap')||mk.startsWith('handicap')){
+    const sp=_parseSpread(seleccion);
+    if(sp===null)return {estado:'REVISION',detalle:'sin línea'};
+    const margen=mios-rivalPts;
+    const total=margen+sp;
+    if(Math.abs(total)<0.001)return {estado:'PUSH',detalle:`${mios}-${rivalPts}`};
+    if(total>0)return {estado:'VA GANANDO',detalle:`${mios}-${rivalPts}`};
+    return {estado:'VA PERDIENDO',detalle:`${mios}-${rivalPts}`};
+  }
+  if(mk.startsWith('under')||mk.startsWith('over')||mk.startsWith('total')){
+    const linea=_parseLinea(seleccion);
+    if(linea===null)return {estado:'REVISION',detalle:'sin línea'};
+    const total=pl+pv;
+    const quiereOver=_ladoTotal(seleccion)==='over';
+    const esOver=total>linea;
+    if(Math.abs(total-linea)<0.001)return {estado:'PUSH',detalle:`total ${total}`};
+    const gana=quiereOver?esOver:!esOver;
+    return {estado:gana?'VA GANANDO':'VA PERDIENDO',detalle:`total ${total} vs ${linea}`};
+  }
+  return {estado:'REVISION',detalle:mercado};
+}
 function _buscarVivo(fecha,eqA,eqB){
   if(!VIVO)return null;
   return VIVO.get(_clavePartido(fecha,eqA,eqB))||null;
