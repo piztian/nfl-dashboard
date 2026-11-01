@@ -6,3 +6,7 @@ Thumbs.db
 node_modules/
 .idea/
 .vscode/
+google-credentials.json
+*.pem
+__pycache__/
+*.pyc

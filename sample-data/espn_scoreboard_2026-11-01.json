@@ -1,0 +1,114 @@
+{
+  "_comentario": "Fixture anonimizado de respuesta del proveedor NFL (ESPN). Sin datos reales de apuesta. Evento de la Semana 8 del 1-nov-2026.",
+  "leagues": [
+    {
+      "id": "8",
+      "name": "National Football League",
+      "season": 2026
+    }
+  ],
+  "events": [
+    {
+      "id": "401873026",
+      "date": "2026-11-01T17:00Z",
+      "name": "Baltimore Ravens at Buffalo Bills",
+      "status": {
+        "type": {
+          "state": "final",
+          "completed": true,
+          "detail": "Final"
+        }
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "score": "30",
+              "team": {
+                "displayName": "Buffalo Bills",
+                "abbreviation": "BUF"
+              }
+            },
+            {
+              "homeAway": "away",
+              "score": "27",
+              "team": {
+                "displayName": "Baltimore Ravens",
+                "abbreviation": "BAL"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "401873030",
+      "date": "2026-11-01T21:00Z",
+      "name": "Atlanta Falcons at Tampa Bay Buccaneers",
+      "status": {
+        "type": {
+          "state": "final",
+          "completed": true,
+          "detail": "Final"
+        }
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "score": "20",
+              "team": {
+                "displayName": "Tampa Bay Buccaneers",
+                "abbreviation": "TB"
+              }
+            },
+            {
+              "homeAway": "away",
+              "score": "22",
+              "team": {
+                "displayName": "Atlanta Falcons",
+                "abbreviation": "ATL"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "401873027",
+      "date": "2026-11-02T18:00Z",
+      "name": "Seattle Seahawks at Chicago Bears",
+      "status": {
+        "type": {
+          "state": "pre",
+          "completed": false,
+          "detail": "Sun, November 2nd at 12:00 PM CST"
+        }
+      },
+      "competitions": [
+        {
+          "competitors": [
+            {
+              "homeAway": "home",
+              "score": "0",
+              "team": {
+                "displayName": "Chicago Bears",
+                "abbreviation": "CHI"
+              }
+            },
+            {
+              "homeAway": "away",
+              "score": "0",
+              "team": {
+                "displayName": "Seattle Seahawks",
+                "abbreviation": "SEA"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

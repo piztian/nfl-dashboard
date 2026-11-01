@@ -1,50 +1,156 @@
 <!doctype html>
-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Control NFL 2026 · Semana 8</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E">
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Control NFL 2026</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E">
 <style>
-:root{color-scheme:dark;--bg:#090f1c;--panel:#121d30;--panel2:#192940;--line:#30405b;--txt:#f5f8ff;--muted:#9faec4;--green:#61dbaf;--red:#ff898f;--amber:#f9c781;--blue:#8ec0ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 88% 0%,#173551,transparent 45%),var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--txt)}main{max-width:1170px;margin:auto;padding:24px 14px 55px}h1{font-size:clamp(29px,4vw,43px);letter-spacing:-.04em;margin:3px 0 8px}h2{font-size:23px;margin:0 0 7px}p{color:var(--muted);line-height:1.6;margin:4px 0}.eyebrow{color:var(--green);font-size:12px;letter-spacing:.13em;font-weight:800;text-transform:uppercase}.head{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin:0 0 20px}.pill,.badge{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:18px}.badge{color:var(--amber)}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:23px}.stat,.card,.note{background:var(--panel);border:1px solid var(--line);border-radius:15px}.stat{padding:17px}.stat span,.metric span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin:4px 0}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.card{padding:20px;margin:0 0 15px}.cardtop{display:flex;gap:15px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.cardtop .badge{margin-top:2px}.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:18px 0}.metric{background:#0e1b2e;border:1px solid #2b405d;border-radius:10px;padding:12px}.metric strong{display:block;margin-top:5px;font-size:20px}.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:680px}td,th{text-align:left;padding:10px 12px;border-bottom:1px solid #293952;font-size:13px}th{background:var(--panel2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border-bottom:0}td b{display:block;font-size:14px}td small{color:var(--muted);display:block;margin-top:3px;font-size:11px}.ticketfoot{margin:13px 0 0;font-size:12px;color:var(--muted)}.settle{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-top:13px}.field{min-width:140px;flex:1;max-width:265px}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}select,input{width:100%;background:#0e1b2e;color:var(--txt);font:inherit;font-size:13px;padding:9px 8px;border:1px solid #41526d;border-radius:9px}input[type=number]{max-width:140px}button{font:inherit;font-weight:700;border:1px solid #395671;color:white;background:#244567;border-radius:10px;padding:10px 13px;cursor:pointer}button:hover{filter:brightness(1.15)}button.alt{background:#176c61;border-color:#2c9887}button.redbtn{background:transparent;color:var(--red);border-color:#5e343f}.tools{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.bar{height:9px;border-radius:9px;background:#273449;overflow:hidden;margin:14px 0 24px}.bar>div{height:100%;background:var(--green)}.footgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.note{padding:15px}.note h3{font-size:15px;margin:0 0 8px}.note p{font-size:13px}.hint{margin:12px 0 21px;font-size:12px;color:var(--muted)}.sidehead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:25px 0 13px}@media(max-width:920px){.stats{grid-template-columns:repeat(3,1fr)}.metrics{grid-template-columns:repeat(3,1fr)}}@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}.card{padding:12px}.stat strong{font-size:22px}.metric strong{font-size:17px}.footgrid{grid-template-columns:1fr}}
-@media print{body{background:white;color:#111}.card,.stat,.note{color:#111;background:white;border-color:#ddd}.metric{background:white;color:#111}.pill,.badge,p,td small,.hint{color:#555}button,.tools{display:none}select,input{color:#111;background:white}}
+:root{color-scheme:dark;--bg:#090f1c;--panel:#121d30;--panel2:#192940;--line:#30405b;--txt:#f5f8ff;--muted:#9faec4;--green:#61dbaf;--red:#ff898f;--amber:#f9c781;--blue:#8ec0ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 88% 0%,#173551,transparent 45%),var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--txt)}main{max-width:1170px;margin:auto;padding:24px 14px 55px}h1{font-size:clamp(29px,4vw,43px);letter-spacing:-.04em;margin:3px 0 8px}h2{font-size:23px;margin:0 0 7px}p{color:var(--muted);line-height:1.6;margin:4px 0}.eyebrow{color:var(--green);font-size:12px;letter-spacing:.13em;font-weight:800;text-transform:uppercase}.head{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin:0 0 20px}.pill,.badge{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:18px;white-space:nowrap}.badge{color:var(--amber)}.badge.ok{color:var(--green)}.badge.no{color:var(--red)}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:23px}.stat,.card,.note{background:var(--panel);border:1px solid var(--line);border-radius:15px}.stat{padding:17px}.stat span,.metric span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin:4px 0}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.card{padding:20px;margin:0 0 15px}.cardtop{display:flex;gap:15px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.cardtop .badge{margin-top:2px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.metric{background:#0e1b2e;border:1px solid #2b405d;border-radius:10px;padding:12px}.metric strong{display:block;margin-top:5px;font-size:20px}.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:680px}td,th{text-align:left;padding:10px 12px;border-bottom:1px solid #293952;font-size:13px}th{background:var(--panel2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border-bottom:0}td b{display:block;font-size:14px}td small{color:var(--muted);display:block;margin-top:3px;font-size:11px}.ticketfoot{margin:13px 0 0;font-size:12px;color:var(--muted)}.tools{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.bar{height:9px;border-radius:9px;background:#273449;overflow:hidden;margin:14px 0 24px}.bar>div{height:100%;background:var(--green)}.footgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.note{padding:15px}.note h3{font-size:15px;margin:0 0 8px}.note p{font-size:13px}.hint{margin:12px 0 21px;font-size:12px;color:var(--muted)}.sidehead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:25px 0 13px}.weekbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 18px}.weekbar label{font-size:12px;color:var(--muted)}select,input{background:#0e1b2e;color:var(--txt);font:inherit;font-size:13px;padding:9px 8px;border:1px solid #41526d;border-radius:9px}button{font:inherit;font-weight:700;border:1px solid #395671;color:white;background:#244567;border-radius:10px;padding:10px 13px;cursor:pointer}button:hover{filter:brightness(1.15)}button.alt{background:#176c61;border-color:#2c9887}button.redbtn{background:transparent;color:var(--red);border-color:#5e343f}.stale{background:#2a1f12;border-color:#5e4526;color:var(--amber);padding:11px 14px;border-radius:11px;font-size:13px;margin:0 0 16px}.loading{color:var(--muted);font-size:13px;padding:24px 0}.res{display:inline-block;font-size:11px;padding:3px 8px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}.res.Ganada,.res.Acertado{color:var(--green);border-color:#2c6b58}.res.Perdida,.res.Fallado{color:var(--red);border-color:#6b3038}.res.Anulada,.res.Anulado{color:var(--amber);border-color:#6b5730}.res.Revisión{color:var(--amber);border-color:#6b5730}
+@media(max-width:920px){.stats{grid-template-columns:repeat(3,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.card{padding:12px}.stat strong{font-size:22px}.metric strong{font-size:17px}.footgrid{grid-template-columns:1fr}}
+@media print{body{background:white;color:#111}.card,.stat,.note{color:#111;background:white;border-color:#ddd}.metric{background:white;color:#111}.pill,.badge,p,td small,.hint,.res{color:#555}.res{border-color:#ccc}button,.tools,.weekbar{display:none}}
 </style></head><body><main>
-<div class="head"><div><div class="eyebrow">🏈 NFL · temporada 2026</div><h1>Mi control de apuestas</h1><p>Semana 8 y apuesta que se extiende al 5 de noviembre · 13 picks originales + 3 boletos de Playdoit</p></div><div class="pill">Datos guardados en este navegador</div></div>
-<div class="stats"><div class="stat"><span>Apuestas confirmadas</span><strong id="betcount">3</strong></div><div class="stat"><span>Total arriesgado</span><strong id="risk">$300</strong></div><div class="stat"><span>Boletos abiertos</span><strong id="open">3</strong></div><div class="stat"><span>Balance neto liquidado</span><strong id="net">$0</strong></div><div class="stat"><span>Aciertos en quiniela</span><strong id="acc">—</strong></div></div>
-<div class="sidehead"><h2>Mis boletos confirmados</h2><span class="pill">Solo se liquida dinero al registrar el resultado real de cada boleto</span></div>
+<div class="head"><div><div class="eyebrow">🏈 NFL · temporada 2026</div><h1>Mi control de apuestas</h1><p id="subtitulo">Pronósticos, parlays y resultados de la temporada</p></div><div class="pill" id="sync-info">Cargando datos…</div></div>
+<div id="aviso"></div>
+<div class="stats"><div class="stat"><span>Apuestas confirmadas</span><strong id="betcount">—</strong></div><div class="stat"><span>Total arriesgado</span><strong id="risk">—</strong></div><div class="stat"><span>Cobro potencial total</span><strong id="potential" class="green">—</strong></div><div class="stat"><span>Cobros confirmados</span><strong id="cobrado">—</strong></div><div class="stat"><span>Aciertos en quiniela</span><strong id="acc">—</strong></div></div>
+<div class="weekbar"><label for="week">Semana NFL</label><select id="week"><option value="">Todas</option></select><span class="pill" id="week-status">—</span></div>
+<div class="sidehead"><h2>Mis boletos confirmados</h2><span class="pill">Detalle financiero por boleto en el Sheet privado</span></div>
 <div id="tickets"></div>
-<div class="sidehead"><h2>Quiniela original · 13 equipos</h2><span class="pill" id="picks-status">13 por evaluar</span></div>
+<div class="sidehead"><h2>Quiniela original</h2><span class="pill" id="picks-status">—</span></div>
 <div class="bar"><div id="progress" style="width:0"></div></div>
-<div class="tools"><button class="alt" id="export">Exportar historial CSV</button><button id="copy">Copiar resumen</button><button id="print">Imprimir / guardar PDF</button><button class="redbtn" id="reset">Borrar resultados manuales</button></div>
+<div class="tools"><button class="alt" id="export">Exportar historial CSV</button><button id="print">Imprimir / guardar PDF</button><button id="reload">Actualizar datos</button></div>
 <div class="scroll"><table><thead><tr><th>#</th><th>Fecha</th><th>Mi pick</th><th>Rival</th><th>Resultado</th><th>Marcador</th></tr></thead><tbody id="picks"></tbody></table></div>
-<div class="footgrid" style="margin-top:19px"><div class="note"><h3>Cómo se usa</h3><p>En cada boleto puedes marcar por separado el resultado de sus selecciones. Después registra el estado real del boleto en Playdoit: abierto, ganado, perdido, anulado o cobrado anticipadamente. Si hubo cobro, introduce exactamente el importe que pagó la casa.</p></div><div class="note"><h3>Cómo calculamos el balance</h3><p>Ganado o cerrado: cobro real menos dinero apostado. Perdido: se descuenta lo apostado. Devuelto: diferencia entre devolución y apuesta. Abierto: todavía no se refleja ganancia ni pérdida liquidada. La quiniela de 13 picks es solo un registro de pronósticos y no duplica el dinero de los parlays.</p></div></div>
-<p class="hint">Momios y ganancias tomados de capturas Playdoit del 31/10/2026. El parlay #3 incluye Ravens vs. Jaguars del jueves 5/11, partido posterior a la Semana 8. El botón «Cerrar apuesta $100» visto en Playdoit es una opción, no una confirmación de cobro. No se actualiza por internet: registra los marcadores o resultados al terminar cada juego. Este archivo guarda cambios solo en el navegador actual; exporta tu historial para respaldo.</p>
+<div class="footgrid" style="margin-top:19px"><div class="note"><h3>Cómo se usa</h3><p>Este tablero es de solo lectura y muestra los resultados que el sincronizador obtiene desde tu Google Sheets privado. El detalle completo —importes por boleto, cobros reales y notas de conciliación— se edita en el Sheet y se publica de forma sanitizada.</p></div><div class="note"><h3>Cómo se calculan los balances</h3><p>Ganado o cerrado: cobro real menos dinero apostado. Perdido: se descuenta lo apostado. Devuelto: diferencia entre devolución y apuesta. Abierto: todavía no se refleja ganancia ni pérdida liquidada. La quiniela es un registro de pronósticos y no duplica el dinero de los parlays.</p></div></div>
+<p class="hint">Los marcadores provienen de un proveedor público de resultados NFL y se verifican contra el Sheet antes de publicarse. Un partido sin marcador final confirmado permanece como pendiente; nunca se rellena con ceros. Si la última sincronización es antigua, el dato puede estar desfasado.</p>
 </main><script>
-const ticketData=[
-{n:2,id:'5600011755',title:'Mixto · 3 ganadores + 2 Under',date:'31/oct/2026 · 22:45',stake:100,odds:'+602',shown:747.48,bonus:null,legs:[['Cincinnati Bengals','Moneyline vs. Tennessee Titans','-667','1 nov'],['Jacksonville Jaguars','Moneyline vs. Indianapolis Colts','-481','1 nov'],['Los Angeles Rams','Moneyline vs. Los Angeles Chargers','-260','1 nov'],['Falcons @ Buccaneers','Menos de 43.0 puntos (incl. prórroga)','-105','1 nov'],['Patriots @ Dolphins','Menos de 43.5 puntos (incl. prórroga)','-115','1 nov']]},
-{n:3,id:'5600025547',title:'Underdogs · 3 ganadores',date:'31/oct/2026 · 22:52',stake:100,odds:'+603',shown:733.75,bonus:30.18,legs:[['Atlanta Falcons','Moneyline vs. Tampa Bay Buccaneers','+107','1 nov'],['Las Vegas Raiders','Moneyline vs. New York Jets','+105','1 nov'],['Baltimore Ravens','Moneyline vs. Jacksonville Jaguars','-152','5 nov']]},
-{n:4,id:'5600097965',title:'Cinco hándicaps',date:'31/oct/2026 · 23:33',stake:100,odds:'+2810',shown:3191.98,bonus:281.09,legs:[['Detroit Lions','Hándicap -3.5 vs. Minnesota Vikings','+100','1 nov'],['Pittsburgh Steelers','Hándicap -3.5 vs. Cleveland Browns','-105','1 nov'],['Jacksonville Jaguars','Hándicap -10.0 vs. Indianapolis Colts','-105','1 nov'],['Las Vegas Raiders','Hándicap +1.5 vs. New York Jets','-110','1 nov'],['Baltimore Ravens','Hándicap +3.0 vs. Buffalo Bills','+100','1 nov']]}
-];
-const games=[['2026-11-01','Bills','Ravens'],['2026-11-01','Bengals','Titans'],['2026-11-01','Cowboys','Cardinals'],['2026-11-01','Lions','Vikings'],['2026-11-01','Raiders','Jets'],['2026-11-01','Steelers','Browns'],['2026-11-01','Falcons','Buccaneers'],['2026-11-01','Jaguars','Colts'],['2026-11-01','Rams','Chargers'],['2026-11-01','Chiefs','Broncos'],['2026-11-01','Patriots','Dolphins'],['2026-11-01','Commanders','Eagles'],['2026-11-02','Seahawks','Bears']];
-const storage='nfl-2026-week8-ledger-v2',oldPicksKey='nfl-2026-week8-picks-v1',oldLegsKey='nfl-2026-week8-playdoit-5600011755';
-let state={tickets:{},picks:[]};try{const o=JSON.parse(localStorage.getItem(storage));if(o&&typeof o==='object'){state={...state,...o}}}catch{}
-let oldPicks=[];try{const o=JSON.parse(localStorage.getItem(oldPicksKey));if(Array.isArray(o))oldPicks=o}catch{}
-let oldLegs=[];try{const o=JSON.parse(localStorage.getItem(oldLegsKey));if(Array.isArray(o))oldLegs=o}catch{}
-state.picks=games.map((_,i)=>({status:(state.picks?.[i]?.status??oldPicks[i]?.status??'pending'),score:(state.picks?.[i]?.score??oldPicks[i]?.score??'')}));
-for(const t of ticketData){const saved=state.tickets?.[t.id]||{};state.tickets[t.id]={status:saved.status||'open',payout:saved.payout??'',legs:t.legs.map((_,i)=>saved.legs?.[i]??(t.n===2?oldLegs[i]:undefined)??'pending')}}
-const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',minimumFractionDigits:2}).format(n);const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-function persist(){try{localStorage.setItem(storage,JSON.stringify(state))}catch{}}
-const statuses=[['open','⏳ Abierto'],['won','✅ Ganado / cobrado'],['lost','❌ Perdido'],['void','↩️ Devuelto'],['cashout','💰 Cobro anticipado']];const legStatus=[['pending','Pendiente'],['win','Acertada'],['loss','Fallada'],['void','Anulada']];
-function opts(items,current){return items.map(([v,label])=>`<option value="${v}" ${v===current?'selected':''}>${label}</option>`).join('')}
-function netTicket(t,s){if(s.status==='lost')return -t.stake;if(['won','cashout','void'].includes(s.status)){const pay=s.payout===''?NaN:Number(s.payout);return Number.isFinite(pay)&&pay>=0?pay-t.stake:null}return null}
-function renderTickets(){document.getElementById('tickets').innerHTML=ticketData.map(t=>{const s=state.tickets[t.id];const net=netTicket(t,s);return `<section class="card" aria-label="Boleto ${t.id}"><div class="cardtop"><div><div class="eyebrow">🎟️ Parlay #${t.n} · Playdoit · ${t.date}</div><h2>${escapeHTML(t.title)}</h2><p>ID: <b>${t.id}</b></p></div><div class="badge">${statuses.find(x=>x[0]===s.status)?.[1]||'Abierto'}</div></div><div class="metrics"><div class="metric"><span>Apuesta</span><strong>${money(t.stake)}</strong></div><div class="metric"><span>Momio</span><strong>${t.odds}</strong></div><div class="metric"><span>Bono mostrado</span><strong>${t.bonus===null?'No desglosado':money(t.bonus)}</strong></div><div class="metric"><span>Cobro potencial mostrado</span><strong class="green">${money(t.shown)}</strong></div><div class="metric"><span>Neto liquidado</span><strong class="${net===null?'muted':net>=0?'green':'red'}">${net===null?'—':money(net)}</strong></div></div><div class="scroll"><table><thead><tr><th>Selección</th><th>Mercado</th><th>Fecha</th><th>Momio</th><th>Resultado</th></tr></thead><tbody>${t.legs.map((leg,i)=>`<tr><td><b>${escapeHTML(leg[0])}</b></td><td>${escapeHTML(leg[1])}</td><td>${escapeHTML(leg[3])}</td><td>${escapeHTML(leg[2])}</td><td><select aria-label="Resultado selección ${i+1} boleto ${t.id}" data-id="${t.id}" data-leg="${i}">${opts(legStatus,s.legs[i])}</select></td></tr>`).join('')}</tbody></table></div><div class="settle"><div class="field"><label for="status-${t.id}">Estado real del boleto</label><select id="status-${t.id}" data-id="${t.id}" data-field="status">${opts(statuses,s.status)}</select></div><div class="field"><label for="payout-${t.id}">Cobro real recibido (MXN)</label><input id="payout-${t.id}" type="number" inputmode="decimal" min="0" step=".01" value="${escapeHTML(s.payout)}" placeholder="Captura importe pagado" data-id="${t.id}" data-field="payout"></div><div class="field"><button data-suggest="${t.id}" type="button">Usar cobro potencial</button></div></div><p class="ticketfoot">${t.n===2?'Atlanta Under 43.0: exactamente 43 puntos normalmente anula esa selección. Incluye prórroga.':t.n===3?'Última selección: Ravens contra Jaguars el 5 de noviembre. No confundir con Ravens contra Bills del 1 de noviembre.':'El hándicap exige cubrir la diferencia de puntos. Jaguars -10.0 puede ser nulo si gana por exactamente 10 puntos.'} El importe potencial no cuenta como cobrado hasta registrar la liquidación real.</p></section>`}).join('')}
-function renderPicks(){document.getElementById('picks').innerHTML=games.map((g,i)=>{const s=state.picks[i];return `<tr><td>${i+1}</td><td>${g[0].slice(-2)}/11</td><td><b>${g[1]}</b></td><td>${g[2]}</td><td><select data-pick="${i}" data-field="status"><option value="pending" ${s.status==='pending'?'selected':''}>Pendiente</option><option value="win" ${s.status==='win'?'selected':''}>Acertado</option><option value="loss" ${s.status==='loss'?'selected':''}>Fallado</option></select></td><td><input data-pick="${i}" data-field="score" type="text" placeholder="Ej. 24-17" value="${escapeHTML(s.score)}"></td></tr>`}).join('')}
-function summary(){const wins=state.picks.filter(x=>x.status==='win').length,losses=state.picks.filter(x=>x.status==='loss').length,settled=ticketData.map(t=>netTicket(t,state.tickets[t.id]));const net=settled.reduce((a,x)=>a+(x||0),0);const open=ticketData.filter(t=>state.tickets[t.id].status==='open').length;document.getElementById('risk').textContent=money(ticketData.reduce((a,t)=>a+t.stake,0));document.getElementById('open').textContent=open;document.getElementById('net').textContent=money(net);document.getElementById('net').className=net<0?'red':net>0?'green':'';document.getElementById('acc').textContent=wins+losses?(100*wins/(wins+losses)).toFixed(1)+'%':'—';document.getElementById('picks-status').textContent=`${wins} aciertos · ${losses} fallos · ${13-wins-losses} pendientes`;document.getElementById('progress').style.width=(100*(wins+losses)/13)+'%'}
-function repaint(){renderTickets();renderPicks();summary()}
-document.getElementById('tickets').addEventListener('change',e=>{const d=e.target.dataset;if(!d.id)return;if(d.leg!==undefined)state.tickets[d.id].legs[+d.leg]=e.target.value;else if(d.field)state.tickets[d.id][d.field]=e.target.value;persist();renderTickets();summary()});
-document.getElementById('tickets').addEventListener('input',e=>{const d=e.target.dataset;if(d.id&&d.field==='payout'){state.tickets[d.id].payout=e.target.value;persist();summary()}});
-document.getElementById('tickets').addEventListener('click',e=>{const id=e.target.dataset.suggest;if(!id)return;const t=ticketData.find(t=>t.id===id);if(!t)return;state.tickets[id].payout=String(t.shown);persist();renderTickets();summary()});
-document.getElementById('picks').addEventListener('change',e=>{const d=e.target.dataset;if(d.pick===undefined)return;state.picks[+d.pick][d.field]=e.target.value;persist();summary()});
-document.getElementById('picks').addEventListener('input',e=>{const d=e.target.dataset;if(d.pick===undefined)return;state.picks[+d.pick][d.field]=e.target.value;persist()});
-function csv(){const rows=[['Tipo','Boleto ID','Parlay','Fecha apuesta','Apuesta MXN','Momio combinado','Cobro potencial MXN','Bono mostrado MXN','Estado boleto','Cobro real MXN','Balance liquidado MXN','Selección','Mercado','Fecha juego','Momio selección','Estado selección']];for(const t of ticketData){const s=state.tickets[t.id];for(let i=0;i<t.legs.length;i++){const l=t.legs[i];rows.push(['Parlay',t.id,t.title,t.date,t.stake,t.odds,t.shown,t.bonus??'',s.status,s.payout,netTicket(t,s)??'',l[0],l[1],l[3],l[2],s.legs[i]])}}for(let i=0;i<games.length;i++){const g=games[i],s=state.picks[i];rows.push(['Pronóstico','',`Pick ${i+1}`,'','', '', '','','','','',g[1],`vs. ${g[2]}`,g[0],'',s.status+(s.score?` · ${s.score}`:'')])}return '\ufeff'+rows.map(row=>row.map(x=>'"'+String(x??'').replaceAll('"','""')+'"').join(',')).join('\r\n')}
-document.getElementById('export').onclick=()=>{const file=new Blob([csv()],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(file),a=document.createElement('a');a.href=url;a.download='nfl_2026_semana8_3_parlays_y_picks.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),500)};
-document.getElementById('copy').onclick=async()=>{const lines=['NFL 2026 · Semana 8','3 boletos Playdoit; $300 MXN apostados',...ticketData.map(t=>{const s=state.tickets[t.id];return `#${t.n} ${t.title} · ID ${t.id} · $${t.stake} · ${t.odds} · ${s.status} · liquidado ${netTicket(t,s)===null?'pendiente':money(netTicket(t,s))}`})];try{await navigator.clipboard.writeText(lines.join('\n'));alert('Resumen copiado')}catch{prompt('Copia resumen',lines.join('\n'))}};
+'use strict';
+const DATA_URL='data/public-nfl.json';
+const STORAGE='nfl-2026-ui-v1';
+const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',minimumFractionDigits:2}).format(n||0);
+const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let DATA=null;
+let SEMANA='';
+
+function guardarPreferencias(){try{localStorage.setItem(STORAGE,JSON.stringify({semana:SEMANA}))}catch{}}
+function leerPreferencias(){try{const o=JSON.parse(localStorage.getItem(STORAGE)||'{}');return o&&typeof o==='object'?o:{}}catch{return{}}}
+
+function clasificarSeleccion(r){
+  const v=String(r||'').trim();
+  if(!v||v==='Pendiente')return 'Pendiente';
+  if(v.startsWith('Ganada')||v.startsWith('Acertado'))return 'Ganada';
+  if(v.startsWith('Perdida')||v.startsWith('Fallado'))return 'Perdida';
+  if(v.startsWith('Anulada')||v.startsWith('Anulado'))return 'Anulada';
+  if(v.startsWith('Revisión'))return 'Revisión';
+  return 'Pendiente';
+}
+
+function renderBoletos(){
+  const container=document.getElementById('tickets');
+  const sel=(DATA.selecciones||[]).filter(s=>!SEMANA||String(s.semana)===String(SEMANA));
+  const grupos=new Map();
+  for(const s of sel){const k=s.boleto||'—';if(!grupos.has(k))grupos.set(k,[]);grupos.get(k).push(s)}
+  if(!grupos.size){container.innerHTML='<div class="loading">Sin boletos para la semana seleccionada.</div>';return}
+  const etiquetas={};
+  (DATA.boletos_publicos||[]).forEach(b=>etiquetas[b.etiqueta]=b.estado);
+  container.innerHTML=[...grupos.entries()].map(([boleto,legs])=>{
+    const estado=etiquetas[boleto]||'Abierto';
+    const badge=estado==='Ganado'?'ok':(estado==='Perdido'?'no':'');
+    return `<section class="card" aria-label="Boleto ${escapeHTML(boleto)}"><div class="cardtop"><div><div class="eyebrow">🎟️ ${escapeHTML(boleto)}</div><h2>${legs.length} ${legs.length===1?'selección':'selecciones'}</h2></div><div class="badge ${badge}">${escapeHTML(estado)}</div></div>
+    <div class="scroll"><table><thead><tr><th>Selección</th><th>Mercado</th><th>Fecha</th><th>Momio</th><th>Resultado</th></tr></thead><tbody>${legs.map(l=>{
+      const st=clasificarSeleccion(l.resultado);
+      return `<tr><td><b>${escapeHTML(l.equipo)}</b><small>vs ${escapeHTML(l.rival)}</small></td><td>${escapeHTML(l.seleccion||l.mercado)}</td><td>${escapeHTML(l.fecha)}</td><td>${escapeHTML(l.cuota_capturada)}</td><td><span class="res ${st}">${escapeHTML(l.resultado||'Pendiente')}</span>${l.marcador?`<small>${escapeHTML(l.marcador)}</small>`:''}</td></tr>`}).join('')}</tbody></table></div></section>`}).join('');
+}
+
+function renderPicks(){
+  const picks=(DATA.picks||[]).filter(p=>!SEMANA||String(p.semana)===String(SEMANA));
+  const cuerpo=document.getElementById('picks');
+  if(!picks.length){cuerpo.innerHTML='<tr><td colspan="6">Sin pronósticos para la semana seleccionada.</td></tr>';return}
+  cuerpo.innerHTML=picks.map((p,i)=>{
+    const st=clasificarSeleccion(p.resultado);
+    return `<tr><td>${i+1}</td><td>${escapeHTML(p.fecha)}</td><td><b>${escapeHTML(p.pick)}</b></td><td>${escapeHTML(p.rival)}</td><td><span class="res ${st}">${escapeHTML(p.resultado||'Pendiente')}</span></td><td>${escapeHTML(p.marcador||'—')}</td></tr>`}).join('');
+}
+
+function resumen(){
+  const r=DATA.resumen_publico||{};
+  const picks=(DATA.picks||[]).filter(p=>!SEMANA||String(p.semana)===String(SEMANA));
+  const resueltos=picks.filter(p=>['Acertado','Fallado','Anulado'].includes(String(p.resultado)));
+  const aciertos=picks.filter(p=>String(p.resultado)==='Acertado').length;
+  const fallos=picks.filter(p=>String(p.resultado)==='Fallado').length;
+  const sel=DATA.selecciones||[];
+  document.getElementById('betcount').textContent=r.boletos_confirmados??sel.length;
+  document.getElementById('risk').textContent=money(r.apostado_total_mxn);
+  document.getElementById('potential').textContent=money(r.cobro_potencial_total_mxn);
+  document.getElementById('cobrado').textContent=money(r.cobro_real_total_mxn);
+  document.getElementById('acc').textContent=resueltos.length?(100*aciertos/resueltos.length).toFixed(1)+'%':'—';
+  document.getElementById('picks-status').textContent=`${aciertos} aciertos · ${fallos} fallos · ${picks.length-aciertos-fallos} pendientes`;
+  document.getElementById('progress').style.width=(resueltos.length?100*resueltos.length/picks.length:0)+'%';
+  document.getElementById('week-status').textContent=`${resueltos.length} de ${picks.length} pronósticos resueltos`;
+}
+
+function renderSemanas(){
+  const set=new Set((DATA.picks||[]).map(p=>String(p.semana)).filter(Boolean));
+  const sel=document.getElementById('week');
+  sel.innerHTML='<option value="">Todas las semanas</option>'+[...set].sort((a,b)=>a-b).map(s=>`<option value="${escapeHTML(s)}">Semana ${escapeHTML(s)}</option>`).join('');
+  sel.value=SEMANA;
+}
+
+function renderAviso(){
+  const box=document.getElementById('aviso');
+  const gen=DATA.generado_en?new Date(DATA.generado_en):null;
+  const horas=gen?(Date.now()-gen.getTime())/3600000:null;
+  const info=document.getElementById('sync-info');
+  if(gen){
+    const txt=gen.toLocaleString('es-MX',{dateStyle:'medium',timeStyle:'short',timeZone:'America/Mexico_City'});
+    info.textContent=`Última actualización: ${txt}`;
+    info.title=`Fuente del marcador: ${DATA.fuente||'proveedor NFL'}`;
+    if(horas!==null&&horas>48){
+      box.innerHTML=`<div class="stale">El dato tiene ${Math.floor(horas)} h de antigüedad. La última sincronización no es reciente: puede que falten marcadores. Pulsa «Actualizar datos» o ejecuta la sincronización.</div>`;
+    }else{
+      box.innerHTML='';
+    }
+  }else{
+    info.textContent='Sin fecha de sincronización';
+  }
+  const sub=document.getElementById('subtitulo');
+  const semanas=[...new Set((DATA.picks||[]).map(p=>String(p.semana)).filter(Boolean))].sort();
+  sub.textContent=semanas.length?`Semana ${semanas[semanas.length-1]} · ${(DATA.picks||[]).length} pronósticos y ${(DATA.selecciones||[]).length} selecciones`:'Pronósticos, parlays y resultados de la temporada';
+}
+
+function render(){renderSemanas();renderBoletos();renderPicks();resumen();renderAviso()}
+
+function csv(){
+  const rows=[['Semana','Fecha','Boleto','Equipo','Rival','Mercado','Seleccion','Momio','Resultado','Marcador']];
+  for(const s of DATA.selecciones||[]){
+    rows.push([s.semana,s.fecha,s.boleto,s.equipo,s.rival,s.mercado,s.seleccion,s.cuota_capturada,s.resultado,s.marcador]);
+  }
+  rows.push([]);
+  rows.push(['Semana','Fecha','Pick','Rival','Resultado','Marcador']);
+  for(const p of DATA.picks||[]){rows.push([p.semana,p.fecha,p.pick,p.rival,p.resultado,p.marcador])}
+  return '\ufeff'+rows.map(r=>r.map(x=>'"'+String(x??'').replaceAll('"','""')+'"').join(',')).join('\r\n');
+}
+
+async function cargar(){
+  const info=document.getElementById('sync-info');
+  info.textContent='Cargando datos…';
+  try{
+    const r=await fetch(DATA_URL,{cache:'no-store'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    DATA=await r.json();
+    render();
+  }catch(e){
+    info.textContent='No se pudo cargar '+DATA_URL;
+    document.getElementById('aviso').innerHTML=`<div class="stale">No se pudo cargar <b>${escapeHTML(DATA_URL)}</b> (${escapeHTML(String(e.message))}). Verifica que la sincronización haya generado el archivo. Detalle: <b>${escapeHTML(DATA_URL)}</b>.</div>`;
+    document.getElementById('tickets').innerHTML='<div class="loading">Sin datos disponibles.</div>';
+  }
+}
+
+document.getElementById('week').addEventListener('change',e=>{SEMANA=e.target.value;guardarPreferencias();render()});
+document.getElementById('export').onclick=()=>{
+  const file=new Blob([csv()],{type:'text/csv;charset=utf-8'});
+  const url=URL.createObjectURL(file),a=document.createElement('a');
+  a.href=url;a.download='nfl_2026_historial.csv';a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),500);
+};
 document.getElementById('print').onclick=()=>window.print();
-document.getElementById('reset').onclick=()=>{if(confirm('¿Borrar estados manuales y cobros registrados? Las apuestas y tus 13 picks seguirán apareciendo.')){state.picks=games.map(()=>({status:'pending',score:''}));for(const t of ticketData)state.tickets[t.id]={status:'open',payout:'',legs:t.legs.map(()=> 'pending')};persist();repaint()}};
-repaint();
+document.getElementById('reload').onclick=()=>cargar();
+
+const pref=leerPreferencias();
+SEMANA=pref.semana||'';
+cargar();
 </script></body></html>

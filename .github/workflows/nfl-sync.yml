@@ -1,0 +1,91 @@
+name: Sincronizar resultados NFL
+
+on:
+  schedule:
+    # Cada 20 minutos durante la temporada. GitHub puede retrasar ejecuciones
+    # programadas: esto NO es tiempo real exacto.
+    - cron: '7,27,47 * * * *'
+  workflow_dispatch:
+    inputs:
+      solo_json:
+        description: 'Solo regenerar el JSON publico (no consultar al proveedor)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  # Evita dos sincronizaciones simultaneas (proteccion de concurrencia).
+  group: nfl-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-httplib2 requests
+
+      - name: Preparar credenciales de Google
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.NFL_GOOGLE_CREDENTIALS }}
+        run: |
+          if [ -z "$GOOGLE_CREDENTIALS_JSON" ]; then
+            echo "::error::Falta el secret NFL_GOOGLE_CREDENTIALS"
+            exit 1
+          fi
+          printf '%s' "$GOOGLE_CREDENTIALS_JSON" > "$RUNNER_TEMP/google-credentials.json"
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$RUNNER_TEMP/google-credentials.json" >> "$GITHUB_ENV"
+
+      - name: Ejecutar pruebas
+        run: |
+          python tests/test_markets.py
+          python tests/test_integration.py
+
+      - name: Sincronizar (dry run primero)
+        env:
+          NFL_SPREADSHEET_ID: ${{ secrets.NFL_SPREADSHEET_ID }}
+        run: |
+          python scripts/nfl_sync.py --dry-run --json-out "$RUNNER_TEMP/public-nfl.json"
+
+      - name: Sincronizar y publicar
+        env:
+          NFL_SPREADSHEET_ID: ${{ secrets.NFL_SPREADSHEET_ID }}
+          SOLO_JSON: ${{ inputs.solo_json }}
+        run: |
+          if [ "$SOLO_JSON" = "true" ]; then
+            python scripts/nfl_sync.py --solo-json --json-out data/public-nfl.json
+          else
+            python scripts/nfl_sync.py --json-out data/public-nfl.json
+          fi
+
+      - name: Validar que no se filtren datos privados
+        env:
+          NFL_SPREADSHEET_ID: ${{ secrets.NFL_SPREADSHEET_ID }}
+        run: |
+          python scripts/validate_public.py data/public-nfl.json
+
+      - name: Publicar cambios
+        run: |
+          if git diff --quiet -- data/public-nfl.json; then
+            echo "Sin cambios en los datos publicos; nada que publicar."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/public-nfl.json
+          STAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+          git commit -m "chore(data): actualizar resultados NFL ($STAMP)"
+          git push
