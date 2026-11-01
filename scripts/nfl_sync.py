@@ -185,7 +185,7 @@ def _indice(encabezados: list[str], nombre: str) -> Optional[int]:
     objetivo = _norm(nombre)
     # El indice debe contar SOLO los encabezados reales de la hoja: las
     # claves internas del registro (`_fila`, `_norm`) no son columnas y
-    #便会 desplazan el conteo.
+    # desplazan el conteo.
     i = 0
     for h in encabezados:
         if h.startswith("_"):
