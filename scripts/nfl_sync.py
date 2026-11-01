@@ -381,7 +381,7 @@ class Sincronizador:
             if nuevo != resultado_actual:
                 self.reporte.agregar(
                     Cambio(HOJAS["picks"], celda, etiqueta, resultado_actual, nuevo,
-                           f"{partido.event_id} · {partido.local} {puntos_local} - {puntos_visitante} {partido.visitante}")
+                           f"{partido.event_id} · {partido.local} {partido.puntos_local} - {partido.puntos_visitante} {partido.visitante}")
                 )
                 a_actualizar.append([nuevo])
 

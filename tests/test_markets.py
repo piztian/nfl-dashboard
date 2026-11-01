@@ -146,6 +146,30 @@ check("A2 WSH/WAS", mismo_equipo("Commanders", "Washington"))
 check("A3 LV", mismo_equipo("Raiders", "LV"))
 check("A4 no confunde Bills con Jaguars", not mismo_equipo("Bills", "Jaguars"))
 check("A5 no confunde Ravens con Jaguars", not mismo_equipo("Ravens", "Jaguars"))
+check("A6 49ers alias de San Francisco 49ers", mismo_equipo("49ers", "San Francisco 49ers"))
+check("A7 SF alias de San Francisco 49ers", mismo_equipo("SF", "San Francisco 49ers"))
+check("A8 49ers NO es lo mismo que Eagles", not mismo_equipo("49ers", "Eagles"))
+
+# --- Regresion: totales con acento, sin acento y formato "Over NN" ------
+a = parsear_seleccion("Over", "Mas de 43.0")
+check("R1 over con acento", a["lado"] == "over" and a["linea"] == 43.0, str(a))
+a = parsear_seleccion("Over", "Mas de 43.0")
+check("R2 over sin acento", a["lado"] == "over" and a["linea"] == 43.0, str(a))
+a = parsear_seleccion("Under", "Menos de 43.0")
+check("R3 under sin acento", a["lado"] == "under" and a["linea"] == 43.0, str(a))
+a = parsear_seleccion("Over", "Over 43.0")
+check("R4 over formato corto", a["lado"] == "over" and a["linea"] == 43.0, str(a))
+a = parsear_seleccion("Under", "Under 43.0")
+check("R5 under formato corto", a["lado"] == "under" and a["linea"] == 43.0, str(a))
+a = parsear_seleccion("Ganador", "Bengals")
+check("R6 mercado Ganador (nombre real en la pestana Picks)",
+      a["lado"] == "moneyline" and a["equipo"] == "Bengals", str(a))
+
+# La linea del total manda sobre la palabra del mercado: "Over" con "Menos de"
+# es una seleccion Under (asi llega desde el Sheet).
+a = parsear_seleccion("Over", "Menos de 43.0")
+check("R7 mercado Over con texto Under invierte el lado",
+      a["lado"] == "under" and a["linea"] == 43.0, str(a))
 
 # --- Resultado principal -------------------------------------------------
 print(f"\n{'='*60}")

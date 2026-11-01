@@ -33,6 +33,7 @@ Reglas transversales:
 from __future__ import annotations
 
 import re
+import unicodedata
 from dataclasses import dataclass
 from typing import Optional
 
@@ -182,7 +183,15 @@ def liquidar_total(
 
 _RE_UNDER = re.compile(r"menos\s+de\s+([0-9]+(?:\.[0-9]+)?)", re.IGNORECASE)
 _RE_OVER = re.compile(r"mas\s+de\s+([0-9]+(?:\.[0-9]+)?)", re.IGNORECASE)
+_RE_UNDER_BARE = re.compile(r"^\s*under\s+([0-9]+(?:\.[0-9]+)?)\s*$", re.IGNORECASE)
+_RE_OVER_BARE = re.compile(r"^\s*over\s+([0-9]+(?:\.[0-9]+)?)\s*$", re.IGNORECASE)
 _RE_SPREAD = re.compile(r"([+-][0-9]+(?:\.[0-9]+)?)\s*$")
+
+
+def _sin_acentos(texto: str) -> str:
+    """Quita acentos y pasa a minusculas para comparar de forma tolerante."""
+    descompuesto = unicodedata.normalize("NFKD", texto)
+    return "".join(c for c in descompuesto if not unicodedata.combining(c)).lower()
 
 
 def parsear_seleccion(mercado: str, seleccion: str) -> dict:
@@ -199,7 +208,7 @@ def parsear_seleccion(mercado: str, seleccion: str) -> dict:
     base = {"mercado": mercado, "linea": None, "spread": None, "lado": None, "equipo": None}
 
     m = mercado.lower()
-    if m.startswith("moneyline"):
+    if m.startswith("moneyline") or m.startswith("ganador"):
         base["lado"] = "moneyline"
         base["equipo"] = seleccion
         return base
@@ -217,11 +226,15 @@ def parsear_seleccion(mercado: str, seleccion: str) -> dict:
         return base
 
     if m.startswith("under") or m.startswith("over") or m.startswith("total"):
-        match = _RE_UNDER.search(seleccion) or _RE_OVER.search(seleccion)
+        # Se normalizan acentos para que "Mas de" y "Más de" se interpreten
+        # igual (el Sheet alterna entre ambas formas).
+        plano = _sin_acentos(seleccion)
+        match = (_RE_UNDER.search(plano) or _RE_OVER.search(plano)
+                 or _RE_UNDER_BARE.search(plano) or _RE_OVER_BARE.search(plano))
         if match:
             base["linea"] = float(match.group(1))
         base["lado"] = "under" if m.startswith("under") else "over"
-        if base["lado"] == "over" and _RE_UNDER.search(seleccion):
+        if base["lado"] == "over" and (_RE_UNDER.search(plano) or _RE_UNDER_BARE.search(plano)):
             base["lado"] = "under"
         return base
 
@@ -373,14 +386,17 @@ _APODOS = {
     "raiders": "lv",
     "lions": "det", "vikings": "min",
     "steelers": "pit", "browns": "cle",
-    "bills ": "buf",
     "chiefs": "kc", "broncos": "den",
     "cowboys": "dal", "cardinals": "ari",
     "commanders": "was", "washington": "was", "redskins": "was",
     "eagles": "phi",
     "seahawks": "sea", "bears": "chi",
     "jets": "nyj", "giants": "nyg",
-    "texans": "hou", "texans ": "hou",
+    "texans": "hou",
+    # Nombres con numero: la normalizacion elimina los digitos, asi que se
+    # resuelve el nombre completo ("San Francisco 49ers" -> "san francisco").
+    "49ers": "sf", "forty niners": "sf",
+    "san francisco": "sf", "san francisco ers": "sf",
 }
 
 
@@ -390,11 +406,21 @@ def normalizar_equipo(nombre: Optional[str]) -> str:
     Maneja nombres largos ("Baltimore Ravens"), abreviaturas ("BAL") y
     apodos ("Jaguars" -> "jax"), de modo que dos referencias al mismo
     equipo siempre produzcan la misma clave.
+
+    Los digitos se eliminan ANTES de resolver, por lo que "49ers" queda como
+    "ers": los nombres con numero se resuelven por su forma completa
+    ("San Francisco 49ers" -> "san francisco" -> "sf").
     """
     if not nombre:
         return ""
     texto = str(nombre).strip().lower()
-    texto = re.sub(r"[^a-z ]+", " ", texto)
+    # Conserva los digitos para casos como "49ers" hasta resolver el alias.
+    crudo = re.sub(r"\s+", " ", texto).strip()
+    if crudo in _ABREV:
+        return _ABREV[crudo]
+    if crudo in _APODOS:
+        return _APODOS[crudo]
+    texto = re.sub(r"[^a-z ]+", " ", crudo)
     texto = re.sub(r"\s+", " ", texto).strip()
     if not texto:
         return ""
@@ -410,6 +436,9 @@ def normalizar_equipo(nombre: Optional[str]) -> str:
             return _APODOS[ultimo]
         if ultimo in _ABREV:
             return _ABREV[ultimo]
+        # "san francisco" (tras quitar digitos de "49ers")
+        if len(partes) >= 2 and " ".join(partes[-2:]) in _APODOS:
+            return _APODOS[" ".join(partes[-2:])]
     return texto
 
 
