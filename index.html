@@ -89,6 +89,7 @@ let VIVO_POR_EQUIPO=null; // mapa 'fecha|equipo' -> partido (para resolver un so
 
 function _sinAcentos(t){return String(t??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
 function _aliasEq(t){
+  if(t&&typeof t==='object')t=t.nombre||t.abbr||'';
   const n=_sinAcentos(t).replace(/[^a-z0-9 ]+/g,' ').trim();
   const p=n.split(/\s+/);
   const ultimo=p[p.length-1]||n;
@@ -182,7 +183,7 @@ function renderBoletos(){
       const st=clasificarSeleccion(l.resultado);
       const vivo=_badgeVivo(l.mercado,l.seleccion||l.equipo,l.equipo,l.rival,l.fecha);
       const vinfo=_buscarVivo(l.fecha,l.equipo,l.rival);
-      const score=vinfo&&vinfo.estado!=='pre'?`<small class="muted">${escapeHTML(vinfo.estado==='post'?'Final':(vinfo.detalle||''))} · ${escapeHTML(vinfo.visitante)} ${escapeHTML(vinfo.pv)} - ${escapeHTML(vinfo.pl)} ${escapeHTML(vinfo.local)}</small>`:'';
+      const score=vinfo&&vinfo.estado!=='pre'?`<small class="muted">${escapeHTML(vinfo.estado==='post'?'Final':(vinfo.detalle||''))} · ${escapeHTML(vinfo.visitante.nombre)} ${escapeHTML(vinfo.pv)} - ${escapeHTML(vinfo.pl)} ${escapeHTML(vinfo.local.nombre)}</small>`:'';
       return `<tr><td><b>${escapeHTML(l.equipo)}</b><small>vs ${escapeHTML(l.rival)}</small>${score}</td><td>${escapeHTML(l.seleccion||l.mercado)}</td><td>${escapeHTML(l.fecha)}</td><td>${escapeHTML(l.cuota_capturada)}</td><td><span class="res ${st}">${escapeHTML(l.resultado||'Pendiente')}</span>${vivo}${l.marcador?`<small>${escapeHTML(l.marcador)}</small>`:''}</td></tr>`}).join('')}</tbody></table></div></section>`}).join('');
 }
 
@@ -270,9 +271,8 @@ async function cargarVivo(){
         new Date(d.getTime()-6*3600000).toISOString().slice(0,10);
       const info={fecha,local,visitante,
         estado:st.state||'',detalle:st.detail||'',
-        periodo:(st.displayClock||st.shortDetail||'').trim()};
-      info.local=local.nombre; info.visitante=visitante.nombre;
-      info.pl=local.pts; info.pv=visitante.pts;
+        periodo:(st.displayClock||st.shortDetail||'').trim(),
+        pl:local.pts, pv:visitante.pts};
       porPareja.set(_clavePartido(fecha,local.nombre,visitante.nombre),info);
       porEquipo.set(fecha+'|'+_aliasEq(local.nombre),info);
       porEquipo.set(fecha+'|'+_aliasEq(visitante.nombre),info);
@@ -310,7 +310,7 @@ function _liquidarVivo(mercado, seleccion, equipo, rival, partido){
   if(!partido||partido.estado==='pre')return {estado:'PENDIENTE',detalle:''};
   const pl=Number(partido.pl), pv=Number(partido.pv);
   if(!Number.isFinite(pl)||!Number.isFinite(pv))return {estado:'PENDIENTE',detalle:''};
-  const esLocal=_aliasEq(partido.local)===_aliasEq(equipo);
+  const esLocal=_aliasEq(partido.local.nombre||partido.local)===_aliasEq(equipo);
   const mios=esLocal?pl:pv, rivalPts=esLocal?pv:pl;
   const mk=_sinAcentos(mercado);
   if(mk.startsWith('moneyline')||mk.startsWith('ganador')){
@@ -368,7 +368,7 @@ function renderVivo(){
 
   const tarjetas=[...grupos.values()].map(g=>{
     const v=g.v, enVivo=v.estado==='in';
-    const pts=x=>x.pts==null?'—':x.pts;
+    const pts=x=>(x&&x.pts!=null&&x.pts!=='')?x.pts:'—';
     const det=v.detalle||'';
     const chip=enVivo
       ? '<span class="live on">● EN VIVO <b>'+escapeHTML(det)+'</b></span>'
@@ -379,8 +379,8 @@ function renderVivo(){
       '<div class="vdetalle">'+escapeHTML(i.seleccion||i.mercado)+'</div>').join('');
     return '<div class="vivocard"><div class="vtop">'+chip+
       '<span class="vscore">'+pts(v.visitante)+' – '+pts(v.local)+'</span></div>'+
-      '<div class="vteams"><span>'+escapeHTML(v.visitante.nombre)+'</span>'+
-      '<span>'+escapeHTML(v.local.nombre)+'</span></div>'+piernas+'</div>';
+      '<div class="vteams"><span>'+escapeHTML(v.visitante.nombre||'')+'</span>'+
+      '<span>'+escapeHTML(v.local.nombre||'')+'</span></div>'+piernas+'</div>';
   }).join('');
 
   box.innerHTML='<div class="vivos">'+tarjetas+'</div>';
