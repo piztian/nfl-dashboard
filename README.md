@@ -159,8 +159,17 @@ decide un resultado.
 
 El tablero tiene un boton luna/sol en el encabezado (arriba a la derecha) que
 alterna entre tema oscuro y claro. La preferencia se guarda en `localStorage`,
-asi que se mantiene entre visitas. Si tu sistema esta en modo claro, el tablero
-arranca en claro.
+asi que se mantiene entre visitas.
+
+El orden de decision al arrancar es: **preferencia guardada > preferencia del
+sistema > oscuro**. Si tu sistema esta en modo claro y no has elegido tema
+manualmente, el tablero arranca en claro. En cuanto tocas el boton, tu
+eleccion manda y queda guardada.
+
+Ojo: `localStorage` es **por navegador y por dispositivo**. El tema que
+elijas en la computadora no aparece en el celular ni en otra pestana sin
+compartir perfil; cada dispositivo vuelve a arrancar segun su propia
+preferencia guardada o la del sistema.
 
 El tema se aplica antes de pintar (script en `<head>`), por eso no hay
 destello del tema oscuro al cargar. Los colores pasan por variables CSS, de
