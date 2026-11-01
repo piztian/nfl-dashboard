@@ -22,6 +22,7 @@ from nfl_markets import (  # noqa: E402
     liquidar_total,
     parsear_seleccion,
     mismo_equipo,
+    resultado_pendiente_por_estado,
 )
 
 fallos: list[str] = []
@@ -170,6 +171,32 @@ check("R6 mercado Ganador (nombre real en la pestana Picks)",
 a = parsear_seleccion("Over", "Menos de 43.0")
 check("R7 mercado Over con texto Under invierte el lado",
       a["lado"] == "under" and a["linea"] == 43.0, str(a))
+
+# --- Estados del proveedor (bug corregido el 1-nov-2026) ------------------
+# ESPN devuelve estado 'in' para partidos en juego. Antes caia en
+# "Revisión manual" porque 'in' no estaba en la lista de estados
+# conocidos, lo que contaminaba la columna Resultado del Sheet.
+for estado, esperado in [
+    ("pre", PENDIENTE),
+    ("scheduled", PENDIENTE),
+    ("in", PENDIENTE),
+    ("in progress", PENDIENTE),
+    ("in_progress", PENDIENTE),
+    ("halftime", PENDIENTE),
+    ("postponed", PENDIENTE),
+    ("post", PENDIENTE),
+    ("final", PENDIENTE),
+    ("estado inventado", REVISION),
+]:
+    r = resultado_pendiente_por_estado(estado)
+    check(f"E1 estado '{estado}' -> {esperado}", r.estado == esperado,
+          f"fue {r.estado} ({r.detalle})")
+
+# Un partido en juego NUNCA debe marcado como 'Revisión manual': eso
+# significa "no supe liquidarlo" y ensucia el Sheet.
+r = resultado_pendiente_por_estado("in")
+check("E2 un partido en juego no produce Revisión manual",
+      r.estado != REVISION, f"fue {r.estado}")
 
 # --- Resultado principal -------------------------------------------------
 print(f"\n{'='*60}")

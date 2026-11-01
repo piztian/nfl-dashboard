@@ -176,10 +176,23 @@ def _norm(texto: str) -> str:
 
 
 def _indice(encabezados: list[str], nombre: str) -> Optional[int]:
+    """Devuelve el indice 0-based REAL de la columna dentro de la hoja.
+
+    Ojo: los encabezados NO pueden incluir las claves internas del registro
+    (`_fila`, `_norm`). Si se pasan, el indice queda corrido y el sync
+    escribe el resultado en la columna vecina (bug del 1-nov-2026).
+    """
     objetivo = _norm(nombre)
-    for i, h in enumerate(encabezados):
+    # El indice debe contar SOLO los encabezados reales de la hoja: las
+    # claves internas del registro (`_fila`, `_norm`) no son columnas y
+    #便会 desplazan el conteo.
+    i = 0
+    for h in encabezados:
+        if h.startswith("_"):
+            continue
         if _norm(h) == objetivo:
             return i
+        i += 1
     return None
 
 
@@ -237,6 +250,7 @@ class Sincronizador:
         col_resultado = _indice(list(registros[0].keys()), "Resultado")
         if col_resultado is None:
             raise SystemExit("No se encontro la columna 'Resultado' en Selecciones")
+        col_notas = _indice(list(registros[0].keys()), "Marcador / notas")
 
         a_actualizar: list[list[str]] = []
         for reg in registros:
@@ -328,6 +342,7 @@ class Sincronizador:
         col_resultado = _indice(list(registros[0].keys()), "Resultado")
         if col_resultado is None:
             raise SystemExit("No se encontro la columna 'Resultado' en Picks")
+        col_marcador = _indice(list(registros[0].keys()), "Marcador")
 
         a_actualizar: list[list[str]] = []
         for reg in registros:

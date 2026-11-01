@@ -34,6 +34,7 @@ from nfl_markets import (  # noqa: E402
     parsear_seleccion,
 )
 from nfl_client import Partido  # noqa: E402
+from nfl_sync import _celda, _indice  # noqa: E402
 
 fallos: list[str] = []
 pruebas = 0
@@ -170,6 +171,39 @@ if sample.is_dir():
             check(f"15 fixture valido: {f.name}", True)
         except json.JSONDecodeError as e:
             check(f"15 fixture valido: {f.name}", False, str(e))
+
+# --- Regresion: desfase de columna (bug del 1-nov-2026) -------------------
+# El sync escribia el Resultado en la columna VECINA (Marcador/notas) porque
+# `_indice` contaba las claves internas del registro (`_fila`, `_norm`).
+# El indice debe contar SOLO los encabezados reales de la hoja.
+enc_selecciones = [
+    "_fila", "Boleto", "Equipo", "Rival", "Mercado", "Seleccion", "Cuota",
+    "Fecha", "Resultado", "Marcador / notas", "_norm",
+]
+i_res = _indice(enc_selecciones, "Resultado")
+check("C1 Selecciones: Resultado es la columna H (idx 7)", i_res == 7, f"fue {i_res}")
+check("C2 Selecciones: la celda es H2", _celda(i_res, 2) == "H2", _celda(i_res, 2))
+i_notas = _indice(enc_selecciones, "Marcador / notas")
+check("C3 Selecciones: Marcador/notas es la columna I (idx 8)", i_notas == 8, f"fue {i_notas}")
+check("C4 Selecciones: Resultado y notas NO son la misma columna",
+      i_res != i_notas, f"ambos {i_res}")
+
+enc_picks = [
+    "_fila", "Semana", "Fecha", "Pick", "Rival", "Mercado", "Resultado",
+    "Marcador", "_norm",
+]
+i_res_p = _indice(enc_picks, "Resultado")
+check("C5 Picks: Resultado es la columna F (idx 5)", i_res_p == 5, f"fue {i_res_p}")
+check("C6 Picks: la celda es F2", _celda(i_res_p, 2) == "F2", _celda(i_res_p, 2))
+i_marc = _indice(enc_picks, "Marcador")
+check("C7 Picks: Marcador es la columna G (idx 6)", i_marc == 6, f"fue {i_marc}")
+check("C8 Picks: Resultado y Marcador NO son la misma columna",
+      i_res_p != i_marc, f"ambos {i_res_p}")
+
+# Si el nombre de columna no existe, debe devolver None (no un indice
+# equivocado que escriba en otra columna).
+check("C9 columna inexistente devuelve None",
+      _indice(enc_picks, "Columna Inventada") is None)
 
 # --- Resultado -------------------------------------------------------------
 print(f"\n{'='*60}")

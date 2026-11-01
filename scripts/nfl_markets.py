@@ -89,7 +89,17 @@ def resultado_pendiente_por_estado(estado_partido: str) -> Resultado:
     estado = (estado_partido or "").strip().lower()
     if estado in ("final", "post", "completed", "f"):
         return Resultado(PENDIENTE, "Marcador final disponible, falta liquidar")
-    if estado in ("scheduled", "pre", "in progress", "in_progress", "halftime", "postponed"):
+    if estado in (
+        "scheduled",
+        "pre",
+        "in",
+        "in progress",
+        "in_progress",
+        "halftime",
+        "postponed",
+        "delay",
+        "delayed",
+    ):
         return Resultado(PENDIENTE, f"Partido en estado '{estado_partido}'")
     return Resultado(REVISION, f"Estado de proveedor desconocido: '{estado_partido}'")
 
