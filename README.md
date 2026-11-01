@@ -130,3 +130,27 @@ Marcadores: API pública de ESPN (`site.api.espn.com`), **no oficial y no
 garantizada**. El sistema valida contra el Sheet y nunca sobreescribe un dato
 existente con información dudosa: en caso de discrepancia marca
 `Revisión manual` y avisa.
+
+## Marcador en vivo
+
+El tablero muestra el marcador en vivo de los partidos de la jornada. La
+consulta se hace **desde el navegador** contra el proveedor publico (ESPN,
+que permite CORS abierto): no usa credenciales, no escribe en el Sheet y no
+altera ningun resultado ya liquidado.
+
+- Refresco automatico cada 60 segundos mientras la pestana esta visible.
+- Se pausa si la pestana queda oculta.
+- El boton "Actualizar datos" recarga el JSON publico y el marcador a la vez.
+
+Los resultados **finales** (Ganada / Perdida / Anulada / Acertado / Fallado)
+los escribe el sincronizador de GitHub Actions en el Sheet y se publican en
+el siguiente ciclo. El marcador en vivo solo complementa la vista; nunca
+decide un resultado.
+
+### Actualizar manualmente
+
+- **Solo ver marcadores**: abrir el tablero y pulsar "Actualizar datos".
+- **Forzar la sincronizacion del Sheet** (escribe resultados finales):
+  GitHub > Actions > "Sincronizar resultados NFL" > Run workflow.
+  O desde la terminal:
+  `gh workflow run nfl-sync.yml --repo piztian/nfl-dashboard`
