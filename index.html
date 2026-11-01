@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Control NFL 2026</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8F%88%3C/text%3E%3C/svg%3E">
 <style>
-:root{color-scheme:dark;--bg:#090f1c;--panel:#121d30;--panel2:#192940;--line:#30405b;--txt:#f5f8ff;--muted:#9faec4;--green:#61dbaf;--red:#ff898f;--amber:#f9c781;--blue:#8ec0ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 88% 0%,#173551,transparent 45%),var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--txt)}main{max-width:1170px;margin:auto;padding:24px 14px 55px}h1{font-size:clamp(29px,4vw,43px);letter-spacing:-.04em;margin:3px 0 8px}h2{font-size:23px;margin:0 0 7px}p{color:var(--muted);line-height:1.6;margin:4px 0}.eyebrow{color:var(--green);font-size:12px;letter-spacing:.13em;font-weight:800;text-transform:uppercase}.head{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin:0 0 20px}.pill,.badge{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:18px;white-space:nowrap}.badge{color:var(--amber)}.badge.ok{color:var(--green)}.badge.no{color:var(--red)}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:23px}.stat,.card,.note{background:var(--panel);border:1px solid var(--line);border-radius:15px}.stat{padding:17px}.stat span,.metric span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin:4px 0}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.card{padding:20px;margin:0 0 15px}.cardtop{display:flex;gap:15px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.cardtop .badge{margin-top:2px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.metric{background:#0e1b2e;border:1px solid #2b405d;border-radius:10px;padding:12px}.metric strong{display:block;margin-top:5px;font-size:20px}.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:680px}td,th{text-align:left;padding:10px 12px;border-bottom:1px solid #293952;font-size:13px}th{background:var(--panel2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border-bottom:0}td b{display:block;font-size:14px}td small{color:var(--muted);display:block;margin-top:3px;font-size:11px}.ticketfoot{margin:13px 0 0;font-size:12px;color:var(--muted)}.tools{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.bar{height:9px;border-radius:9px;background:#273449;overflow:hidden;margin:14px 0 24px}.bar>div{height:100%;background:var(--green)}.footgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.note{padding:15px}.note h3{font-size:15px;margin:0 0 8px}.note p{font-size:13px}.hint{margin:12px 0 21px;font-size:12px;color:var(--muted)}.sidehead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:25px 0 13px}.weekbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 18px}.weekbar label{font-size:12px;color:var(--muted)}select,input{background:#0e1b2e;color:var(--txt);font:inherit;font-size:13px;padding:9px 8px;border:1px solid #41526d;border-radius:9px}button{font:inherit;font-weight:700;border:1px solid #395671;color:white;background:#244567;border-radius:10px;padding:10px 13px;cursor:pointer}button:hover{filter:brightness(1.15)}button.alt{background:#176c61;border-color:#2c9887}button.redbtn{background:transparent;color:var(--red);border-color:#5e343f}.stale{background:#2a1f12;border-color:#5e4526;color:var(--amber);padding:11px 14px;border-radius:11px;font-size:13px;margin:0 0 16px}.loading{color:var(--muted);font-size:13px;padding:24px 0}.res{display:inline-block;font-size:11px;padding:3px 8px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}.res.Ganada,.res.Acertado{color:var(--green);border-color:#2c6b58}.res.Perdida,.res.Fallado{color:var(--red);border-color:#6b3038}.res.Anulada,.res.Anulado{color:var(--amber);border-color:#6b5730}.res.Revisión{color:var(--amber);border-color:#6b5730}
+:root{color-scheme:dark;--bg:#090f1c;--panel:#121d30;--panel2:#192940;--line:#30405b;--txt:#f5f8ff;--muted:#9faec4;--green:#61dbaf;--red:#ff898f;--amber:#f9c781;--blue:#8ec0ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 88% 0%,#173551,transparent 45%),var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--txt)}main{max-width:1170px;margin:auto;padding:24px 14px 55px}h1{font-size:clamp(29px,4vw,43px);letter-spacing:-.04em;margin:3px 0 8px}h2{font-size:23px;margin:0 0 7px}p{color:var(--muted);line-height:1.6;margin:4px 0}.eyebrow{color:var(--green);font-size:12px;letter-spacing:.13em;font-weight:800;text-transform:uppercase}.head{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin:0 0 20px}.pill,.badge{font-size:12px;color:var(--muted);border:1px solid var(--line);padding:7px 10px;border-radius:18px;white-space:nowrap}.badge{color:var(--amber)}.badge.ok{color:var(--green)}.badge.no{color:var(--red)}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:23px}.stat,.card,.note{background:var(--panel);border:1px solid var(--line);border-radius:15px}.stat{padding:17px}.stat span,.metric span{font-size:12px;color:var(--muted);display:block}.stat strong{font-size:26px;display:block;margin:4px 0}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.card{padding:20px;margin:0 0 15px}.cardtop{display:flex;gap:15px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.cardtop .badge{margin-top:2px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.metric{background:#0e1b2e;border:1px solid #2b405d;border-radius:10px;padding:12px}.metric strong{display:block;margin-top:5px;font-size:20px}.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:680px}td,th{text-align:left;padding:10px 12px;border-bottom:1px solid #293952;font-size:13px}th{background:var(--panel2);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border-bottom:0}td b{display:block;font-size:14px}td small{color:var(--muted);display:block;margin-top:3px;font-size:11px}.ticketfoot{margin:13px 0 0;font-size:12px;color:var(--muted)}.tools{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.bar{height:9px;border-radius:9px;background:#273449;overflow:hidden;margin:14px 0 24px}.bar>div{height:100%;background:var(--green)}.footgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.note{padding:15px}.note h3{font-size:15px;margin:0 0 8px}.note p{font-size:13px}.hint{margin:12px 0 21px;font-size:12px;color:var(--muted)}.sidehead{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin:25px 0 13px}.weekbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 18px}.weekbar label{font-size:12px;color:var(--muted)}select,input{background:#0e1b2e;color:var(--txt);font:inherit;font-size:13px;padding:9px 8px;border:1px solid #41526d;border-radius:9px}button{font:inherit;font-weight:700;border:1px solid #395671;color:white;background:#244567;border-radius:10px;padding:10px 13px;cursor:pointer}button:hover{filter:brightness(1.15)}button.alt{background:#176c61;border-color:#2c9887}button.redbtn{background:transparent;color:var(--red);border-color:#5e343f}.live{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:3px 9px;border-radius:12px;border:1px solid #6b3038;background:#2a1420;color:var(--red);white-space:nowrap}.live b{color:var(--txt);font-size:12px}.live.on{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.62}}.vivos{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px}.vivocard{background:#0e1b2e;border:1px solid var(--line);border-radius:11px;padding:12px}.vivocard .vtop{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px}.vivocard .vscore{font-size:19px;font-weight:700;letter-spacing:-.02em}.vivocard .vteams{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);gap:8px}.vivocard .vteams span:first-child{text-align:left}.vivocard .vteams span:last-child{text-align:right}.vdetalle{font-size:11px;color:var(--muted);margin-top:6px}.stale{background:#2a1f12;border-color:#5e4526;color:var(--amber);padding:11px 14px;border-radius:11px;font-size:13px;margin:0 0 16px}.loading{color:var(--muted);font-size:13px;padding:24px 0}.res{display:inline-block;font-size:11px;padding:3px 8px;border-radius:12px;border:1px solid var(--line);color:var(--muted)}.res.Ganada,.res.Acertado{color:var(--green);border-color:#2c6b58}.res.Perdida,.res.Fallado{color:var(--red);border-color:#6b3038}.res.Anulada,.res.Anulado{color:var(--amber);border-color:#6b5730}.res.Revisión{color:var(--amber);border-color:#6b5730}
 @media(max-width:920px){.stats{grid-template-columns:repeat(3,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.card{padding:12px}.stat strong{font-size:22px}.metric strong{font-size:17px}.footgrid{grid-template-columns:1fr}}
 @media print{body{background:white;color:#111}.card,.stat,.note{color:#111;background:white;border-color:#ddd}.metric{background:white;color:#111}.pill,.badge,p,td small,.hint,.res{color:#555}.res{border-color:#ccc}button,.tools,.weekbar{display:none}}
 </style></head><body><main>
 <div class="head"><div><div class="eyebrow">🏈 NFL · temporada 2026</div><h1>Mi control de apuestas</h1><p id="subtitulo">Pronósticos, parlays y resultados de la temporada</p></div><div class="pill" id="sync-info">Cargando datos…</div></div>
 <div id="aviso"></div>
+<div id="vivo"></div>
 <div class="stats"><div class="stat"><span>Apuestas confirmadas</span><strong id="betcount">—</strong></div><div class="stat"><span>Total arriesgado</span><strong id="risk">—</strong></div><div class="stat"><span>Cobro potencial total</span><strong id="potential" class="green">—</strong></div><div class="stat"><span>Cobros confirmados</span><strong id="cobrado">—</strong></div><div class="stat"><span>Aciertos en quiniela</span><strong id="acc">—</strong></div></div>
 <div class="weekbar"><label for="week">Semana NFL</label><select id="week"><option value="">Todas</option></select><span class="pill" id="week-status">—</span></div>
 <div class="sidehead"><h2>Mis boletos confirmados</h2><span class="pill">Detalle financiero por boleto en el Sheet privado</span></div>
@@ -21,11 +22,38 @@
 </main><script>
 'use strict';
 const DATA_URL='data/public-nfl.json';
+const ESPN_URL='https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard';
+const VIVO_MS=60000; // cada minuto se refresca el marcador en vivo
 const STORAGE='nfl-2026-ui-v1';
 const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',minimumFractionDigits:2}).format(n||0);
 const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let DATA=null;
 let SEMANA='';
+let VIVO=null;          // mapa 'fecha|equipoA|equipoB' -> partido en vivo
+let VIVO_POR_EQUIPO=null; // mapa 'fecha|equipo' -> partido (para resolver un solo lado)
+
+function _sinAcentos(t){return String(t??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
+function _aliasEq(t){
+  const n=_sinAcentos(t).replace(/[^a-z0-9 ]+/g,' ').trim();
+  const p=n.split(/\s+/);
+  const ultimo=p[p.length-1]||n;
+  const mapa={jaguars:'jax',jacksonville:'jax',jac:'jax',bills:'buf',buffalo:'buf',
+    ravens:'bal',baltimore:'bal',colts:'ind',indianapolis:'ind',bengals:'cin',
+    cincinnati:'cin',titans:'ten',tennessee:'ten',rams:'lar',chargers:'lac',
+    falcons:'atl',buccaneers:'tb',bucs:'tb',patriots:'ne',dolphins:'mia',
+    raiders:'lv',lions:'det',vikings:'min',steelers:'pit',browns:'cle',
+    chiefs:'kc',broncos:'den',cowboys:'dal',cardinals:'ari',commanders:'wsh',
+    washington:'wsh',eagles:'phi',seahawks:'sea',bears:'chi',jets:'nyj',
+    giants:'nyg',texans:'hou',packers:'gb','49ers':'sf',sf:'sf'};
+  if(mapa[n])return mapa[n];
+  if(mapa[ultimo])return mapa[ultimo];
+  if(n.includes('san francisco'))return 'sf';
+  return n.replace(/ /g,'');
+}
+function _clavePartido(fecha,eqA,eqB){
+  const a=_aliasEq(eqA),b=_aliasEq(eqB);
+  return fecha+'|'+[a,b].sort().join('|');
+}
 
 function guardarPreferencias(){try{localStorage.setItem(STORAGE,JSON.stringify({semana:SEMANA}))}catch{}}
 function leerPreferencias(){try{const o=JSON.parse(localStorage.getItem(STORAGE)||'{}');return o&&typeof o==='object'?o:{}}catch{return{}}}
@@ -112,7 +140,96 @@ function renderAviso(){
   sub.textContent=semanas.length?`Semana ${semanas[semanas.length-1]} · ${(DATA.picks||[]).length} pronósticos y ${(DATA.selecciones||[]).length} selecciones`:'Pronósticos, parlays y resultados de la temporada';
 }
 
-function render(){renderSemanas();renderBoletos();renderPicks();resumen();renderAviso()}
+// --- Marcador en vivo ----------------------------------------------------
+// El proveedor es publico y permite CORS, asi que el navegador consulta
+// directamente: no requiere credenciales ni escribir en el Sheet. Es solo
+// lectura y no modifica ningun resultado ya liquidado.
+async function cargarVivo(){
+  const box=document.getElementById('vivo');
+  try{
+    const r=await fetch(ESPN_URL,{cache:'no-store'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const j=await r.json();
+    const porPareja=new Map(), porEquipo=new Map();
+    for(const ev of (j.events||[])){
+      const comp=(ev.competitions||[])[0]; if(!comp)continue;
+      const st=(ev.status&&ev.status.type)||{};
+      let local=null,visitante=null;
+      for(const c of (comp.competitors||[])){
+        const t=c.team||{};
+        const info={nombre:t.displayName||t.name||'',abbr:t.abbreviation||'',
+                    pts:(c.score==null?null:String(c.score))};
+        if(c.homeAway==='home')local=info; else visitante=info;
+      }
+      if(!local||!visitante)continue;
+      // La fecha del partido en hora local de Mexico.
+      const d=new Date(ev.date||'');
+      const fecha=Number.isNaN(d.getTime())?'':
+        new Date(d.getTime()-6*3600000).toISOString().slice(0,10);
+      const info={fecha,local,visitante,
+        estado:st.state||'',detalle:st.detail||'',
+        periodo:(st.displayClock||st.shortDetail||'').trim()};
+      porPareja.set(_clavePartido(fecha,local.nombre,visitante.nombre),info);
+      porEquipo.set(fecha+'|'+_aliasEq(local.nombre),info);
+      porEquipo.set(fecha+'|'+_aliasEq(visitante.nombre),info);
+    }
+    VIVO=porPareja; VIVO_POR_EQUIPO=porEquipo;
+    renderVivo();
+  }catch(e){
+    box.innerHTML='<div class="note"><h3>Marcador en vivo no disponible</h3><p>No se pudo consultar al proveedor de resultados ('+escapeHTML(String(e.message))+'). Los resultados ya liquidados siguen visibles; el marcador en vivo require conexion a internet.</p></div>';
+  }
+}
+
+function _buscarVivo(fecha,eqA,eqB){
+  if(!VIVO)return null;
+  return VIVO.get(_clavePartido(fecha,eqA,eqB))||null;
+}
+
+function renderVivo(){
+  const box=document.getElementById('vivo');
+  const filas=[];
+  for(const s of (DATA.selecciones||[])){
+    const v=_buscarVivo(s.fecha,s.equipo,s.rival);
+    if(v)filas.push({equipo:s.equipo,rival:s.rival,seleccion:s.seleccion,mercado:s.mercado,v});
+  }
+  for(const p of (DATA.picks||[])){
+    if(filas.some(f=>f.equipo===p.pick&&f.rival===p.rival&&f.fecha===p.fecha))continue;
+    const v=(VIVO_POR_EQUIPO&&VIVO_POR_EQUIPO.get(p.fecha+'|'+_aliasEq(p.pick)))||null;
+    if(v)filas.push({equipo:p.pick,rival:p.rival,seleccion:'Ganador',mercado:'Ganador',fecha:p.fecha,v});
+  }
+  if(!filas.length){box.innerHTML='';return}
+
+  // Un partido puede aparecer por varias selecciones: se agrupa.
+  const grupos=new Map();
+  for(const f of filas){
+    const k=_clavePartido(f.v.fecha,f.equipo,f.rival);
+    if(!grupos.has(k))grupos.set(k,{v:f.v,items:[]});
+    grupos.get(k).items.push(f);
+  }
+
+  const tarjetas=[...grupos.values()].map(g=>{
+    const v=g.v, enVivo=v.estado==='in';
+    const pts=x=>x.pts==null?'—':x.pts;
+    const det=v.detalle||'';
+    const chip=enVivo
+      ? '<span class="live on">● EN VIVO <b>'+escapeHTML(det)+'</b></span>'
+      : (v.estado==='post'
+        ? '<span class="badge ok">Final</span>'
+        : '<span class="badge">Programado</span>');
+    const piernas=g.items.map(i=>
+      '<div class="vdetalle">'+escapeHTML(i.seleccion||i.mercado)+'</div>').join('');
+    return '<div class="vivocard"><div class="vtop">'+chip+
+      '<span class="vscore">'+pts(v.visitante)+' – '+pts(v.local)+'</span></div>'+
+      '<div class="vteams"><span>'+escapeHTML(v.visitante.nombre)+'</span>'+
+      '<span>'+escapeHTML(v.local.nombre)+'</span></div>'+piernas+'</div>';
+  }).join('');
+
+  box.innerHTML='<div class="sidehead"><h2>Marcador en vivo</h2>'+
+    '<span class="pill">Consulta directa al proveedor público, en solo lectura</span></div>'+
+    '<div class="vivos">'+tarjetas+'</div>';
+}
+
+function render(){renderSemanas();renderBoletos();renderPicks();resumen();renderAviso();renderVivo()}
 
 function csv(){
   const rows=[['Semana','Fecha','Boleto','Equipo','Rival','Mercado','Seleccion','Momio','Resultado','Marcador']];
@@ -148,9 +265,19 @@ document.getElementById('export').onclick=()=>{
   setTimeout(()=>URL.revokeObjectURL(url),500);
 };
 document.getElementById('print').onclick=()=>window.print();
-document.getElementById('reload').onclick=()=>cargar();
+document.getElementById('reload').onclick=async()=>{
+  const b=document.getElementById('reload');
+  b.disabled=true;b.textContent='Actualizando…';
+  try{await cargar();await cargarVivo()}finally{b.disabled=false;b.textContent='Actualizar datos'}
+};
 
 const pref=leerPreferencias();
 SEMANA=pref.semana||'';
 cargar();
+// El marcador en vivo se refresca solo cada minuto mientras la pestana
+// este abierta. Los resultados ya liquidados solo cambian cuando el
+// sincronizador de GitHub los escribe en el Sheet.
+cargarVivo();
+setInterval(()=>{if(!document.hidden)cargarVivo()},VIVO_MS);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)cargarVivo()});
 </script></body></html>
