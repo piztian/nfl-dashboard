@@ -154,3 +154,14 @@ decide un resultado.
   GitHub > Actions > "Sincronizar resultados NFL" > Run workflow.
   O desde la terminal:
   `gh workflow run nfl-sync.yml --repo piztian/nfl-dashboard`
+
+## Tema claro / oscuro
+
+El tablero tiene un boton luna/sol en el encabezado (arriba a la derecha) que
+alterna entre tema oscuro y claro. La preferencia se guarda en `localStorage`,
+asi que se mantiene entre visitas. Si tu sistema esta en modo claro, el tablero
+arranca en claro.
+
+El tema se aplica antes de pintar (script en `<head>`), por eso no hay
+destello del tema oscuro al cargar. Los colores pasan por variables CSS, de
+modo que el cambio no altera ningun dato ni el Sheet.
