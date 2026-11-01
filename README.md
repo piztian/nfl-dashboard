@@ -165,3 +165,23 @@ arranca en claro.
 El tema se aplica antes de pintar (script en `<head>`), por eso no hay
 destello del tema oscuro al cargar. Los colores pasan por variables CSS, de
 modo que el cambio no altera ningun dato ni el Sheet.
+
+## Estado vivo por pierna
+
+Cada pierna de boleto y cada pick de la quiniela muestra un badge con su
+estado actual:
+
+- **VA GANANDO** (verde) / **VA PERDIENDO** (rojo) / **PUSH** (ámbar) / **SIN EMPEZAR**
+- La cabecera de cada boleto muestra el conteo: "3 GANANDO", "2 PERDIENDO",
+  "2 SIN EMPEZAR".
+- Bajo el nombre del equipo aparece el marcador y el cuarto en curso.
+
+El cálculo en vivo usa las mismas reglas que el backend
+(`scripts/nfl_markets.py`): Moneyline por ganador, Spread como
+`margen + spread` (con push exacto) y Over/Under contra el total.
+
+> Es **informativo**. El resultado oficial lo decide el sincronizador de
+> GitHub Actions contra el Sheet; el badge solo refleja el marcador de este
+> momento.
+
+El tablero se refresca solo cada 60 segundos con la pestaña visible.
