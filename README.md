@@ -202,3 +202,21 @@ los titulares para que escalen con el ancho de pantalla. Los botones y
 selectores tienen `min-height` de 46px/44px para targets táctiles, y el
 breakpoint móvil (680px) compacta las tarjetas, pone las estadísticas a dos
 columnas y los vivos a una sola.
+
+## Bugs corregidos (1-nov-2026)
+
+Dos defectos del sincronizador que dejaron el Sheet contaminado:
+
+1. **Desfase de columna.** `_indice()` contaba las claves internas del
+   registro (`_fila`, `_norm`) como si fueran columnas de la hoja, así que el
+   índice de `Resultado` quedaba corrido +1 y el veredicto se escribía en la
+   columna vecina: `Marcador / notas` en Selecciones y `Marcador` en picks.
+   10 de 13 selecciones quedaron con `Revisión manual` en la columna
+   equivocada. Ahora `_indice()` cuenta solo los encabezados reales.
+
+2. **Estado `in` no reconocido.** `resultado_pendiente_por_estado()` solo
+   aceptaba `in progress` / `in_progress`, pero ESPN devuelve `in`. Ese
+   estado caía en `Revisión manual` en vez de `Pendiente`.
+
+Ambos tienen test de regresión (`tests/test_integration.py` y
+`tests/test_markets.py`).
