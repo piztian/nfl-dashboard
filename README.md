@@ -220,3 +220,23 @@ Dos defectos del sincronizador que dejaron el Sheet contaminado:
 
 Ambos tienen test de regresión (`tests/test_integration.py` y
 `tests/test_markets.py`).
+
+## Pestañas y secciones colapsables
+
+El tablero esta dividido en 4 secciones plegables:
+
+| Sección | Contenido |
+|---|---|
+| 📺 Marcador en vivo | Los 13 partidos de la jornada con su marcador |
+| 🎟️ Mis boletos | Los 3 boletos con sus 13 selecciones |
+| 📋 Quiniela original | Los 13 picks con su resultado |
+| ℹ️ Ayuda | Cómo se usa y cómo se calculan los balances |
+
+- La barra de pestañas es **fija (sticky)** al hacer scroll: siempre
+  tienes el acceso rápido a la vista.
+- Cada sección se abre y se cierra tocando su encabezado.
+- El botón **Desplegar todo / Plegar todo** abre o cierra las cuatro.
+- El estado se **guarda en `localStorage`**: la página se abre igual que
+  como la dejaste.
+- Los encabezados llevan contadores: partidos en vivo, boletos ganados y
+  perdidos, y aciertos de la quiniela.
