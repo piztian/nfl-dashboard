@@ -25,7 +25,7 @@ PATRONES_PROHIBIDOS = {
     "columna 'ID boleto'": re.compile(r"ID boleto", re.IGNORECASE),
     "token de GitHub": re.compile(r"\bgh[pousr]_[A-Za-z0-9]{20,}\b"),
     "clave privada JSON": re.compile(r'"private_key"'),
-    "API key de Google": re.compile(r"AIza[0-9A-Za-z\-_]{35}"),
+    "API key de Google": re.compile(r"AIza[0-9A-Za-z\-_]{30,}"),
     "refresh token de OAuth": re.compile(r"1//[0-9A-Za-z_\-]{40,}"),
 }
 
