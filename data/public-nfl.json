@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-11-01T20:09:03+00:00",
+  "generado_en": "2026-11-01T21:40:18+00:00",
   "fuente": "espn",
   "temporada": 2026,
   "boletos_publicos": [
@@ -26,7 +26,7 @@
       "seleccion": "Bengals",
       "cuota_capturada": "-667",
       "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "marcador": "",
       "boleto": "#2 Mixto"
     },
     {
@@ -37,8 +37,8 @@
       "mercado": "Moneyline",
       "seleccion": "Jaguars",
       "cuota_capturada": "-481",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Ganada",
+      "marcador": "",
       "boleto": "#2 Mixto"
     },
     {
@@ -61,8 +61,8 @@
       "mercado": "Under",
       "seleccion": "Menos de 43.0",
       "cuota_capturada": "-105",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Ganada",
+      "marcador": "",
       "boleto": "#2 Mixto"
     },
     {
@@ -85,8 +85,8 @@
       "mercado": "Moneyline",
       "seleccion": "Falcons",
       "cuota_capturada": "+107",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Perdida",
+      "marcador": "",
       "boleto": "#3 Underdogs"
     },
     {
@@ -97,8 +97,8 @@
       "mercado": "Moneyline",
       "seleccion": "Raiders",
       "cuota_capturada": "+105",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Ganada",
+      "marcador": "",
       "boleto": "#3 Underdogs"
     },
     {
@@ -121,8 +121,8 @@
       "mercado": "Spread",
       "seleccion": "Lions -3.5",
       "cuota_capturada": "+100",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Ganada",
+      "marcador": "",
       "boleto": "#4 Hándicaps"
     },
     {
@@ -133,8 +133,8 @@
       "mercado": "Spread",
       "seleccion": "Steelers -3.5",
       "cuota_capturada": "-105",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Ganada",
+      "marcador": "",
       "boleto": "#4 Hándicaps"
     },
     {
@@ -145,8 +145,8 @@
       "mercado": "Spread",
       "seleccion": "Jaguars -10.0",
       "cuota_capturada": "-105",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Ganada",
+      "marcador": "",
       "boleto": "#4 Hándicaps"
     },
     {
@@ -157,8 +157,8 @@
       "mercado": "Spread",
       "seleccion": "Raiders +1.5",
       "cuota_capturada": "-110",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Ganada",
+      "marcador": "",
       "boleto": "#4 Hándicaps"
     },
     {
@@ -169,8 +169,8 @@
       "mercado": "Spread",
       "seleccion": "Ravens +3.0",
       "cuota_capturada": "+100",
-      "resultado": "Pendiente",
-      "marcador": "Revisión manual",
+      "resultado": "Perdida",
+      "marcador": "",
       "boleto": "#4 Hándicaps"
     }
   ],
@@ -180,7 +180,7 @@
       "fecha": "2026-11-01",
       "pick": "Bills",
       "rival": "Ravens",
-      "resultado": "Pendiente",
+      "resultado": "Acertado",
       "marcador": ""
     },
     {
@@ -196,7 +196,7 @@
       "fecha": "2026-11-01",
       "pick": "Cowboys",
       "rival": "Cardinals",
-      "resultado": "Pendiente",
+      "resultado": "Fallado",
       "marcador": ""
     },
     {
@@ -204,7 +204,7 @@
       "fecha": "2026-11-01",
       "pick": "Lions",
       "rival": "Vikings",
-      "resultado": "Pendiente",
+      "resultado": "Acertado",
       "marcador": ""
     },
     {
@@ -212,7 +212,7 @@
       "fecha": "2026-11-01",
       "pick": "Raiders",
       "rival": "Jets",
-      "resultado": "Pendiente",
+      "resultado": "Acertado",
       "marcador": ""
     },
     {
@@ -220,7 +220,7 @@
       "fecha": "2026-11-01",
       "pick": "Steelers",
       "rival": "Browns",
-      "resultado": "Pendiente",
+      "resultado": "Acertado",
       "marcador": ""
     },
     {
@@ -228,7 +228,7 @@
       "fecha": "2026-11-01",
       "pick": "Falcons",
       "rival": "Buccaneers",
-      "resultado": "Pendiente",
+      "resultado": "Fallado",
       "marcador": ""
     },
     {
@@ -236,7 +236,7 @@
       "fecha": "2026-11-01",
       "pick": "Jaguars",
       "rival": "Colts",
-      "resultado": "Pendiente",
+      "resultado": "Acertado",
       "marcador": ""
     },
     {
