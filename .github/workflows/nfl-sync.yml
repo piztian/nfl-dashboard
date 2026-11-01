@@ -76,6 +76,10 @@ jobs:
           NFL_SPREADSHEET_ID: ${{ secrets.NFL_SPREADSHEET_ID }}
         run: |
           python scripts/validate_public.py data/public-nfl.json
+          # El validador anterior solo mira el JSON publicado. Este escanea
+          # TODO el repo: el ID del Sheet o el correo de la cuenta de
+          # servicio pueden colarse en un .md o un .env de ejemplo.
+          python scripts/scan_repo_secrets.py --repo . --extra-id "$NFL_SPREADSHEET_ID"
 
       - name: Publicar cambios
         run: |

@@ -35,10 +35,14 @@ el Sheet; el siguiente ciclo de sincronizacion lo refleja en el dashboard.
 | Que | Valor |
 |---|---|
 | Tipo | Cuenta de servicio (service account) |
-| Email | `moltyluk@moltyluk.iam.gserviceaccount.com` |
-| Project | `moltyluk` |
+| Email | `<CUENTA_DE_SERVICIO>` — se define como secreto de GitHub, **no** se escribe aqui |
+| Project | `<PROJECT_ID>` |
 | Permiso en el Sheet | Editor, **solo** en este spreadsheet |
 | Scopes | `https://www.googleapis.com/auth/spreadsheets` |
+
+El correo y el project de la cuenta de servicio **no se publican**: son el
+nombre del actor con permisos de escritura. Se consultan desde los secretos
+de GitHub (`NFL_GOOGLE_CREDENTIALS` / `NFL_SPREADSHEET_ID`).
 
 La cuenta de servicio **no tiene acceso a ningun otro documento** de Google.
 Si se filtra el JSON, el alcance del dano se limita a este Sheet.
@@ -133,9 +137,10 @@ La tabla de inicio de semana NFL 2026 esta en `scripts/nfl_client.py`
 
 | Sintoma | Causa probable | Que hacer |
 |---|---|---|
-| `403 ... does not have permission` | La cuenta de servicio perdio el permiso del Sheet | Reautorizar: agregar `moltyluk@moltyluk.iam.gserviceaccount.com` como Editor del Sheet |
+| `403 ... does not have permission` | La cuenta de servicio perdio el permiso del Sheet | Reautorizar: agregar la cuenta de servicio (la del secreto `NFL_GOOGLE_CREDENTIALS`) como Editor del Sheet |
 | `404` al cargar `data/public-nfl.json` | El sync no ha corrido o fallo | Correr el sync manualmente (seccion 3) |
 | `RECHAZADO: ... contiene datos privados` | El generador metio algo prohibido | **No publicar.** Revisar `scripts/validate_public.py` y el origen del dato |
+| `RECHAZADO — ...` en el escaneo del repo | Un archivo del repo (no el JSON) expone un dato privado | **No publicar.** Revisar `scripts/scan_repo_secrets.py` y el archivo que reporta |
 | Marcadores que no llegan | El proveedor cambio su formato | Revisar `nfl_client._parsear_espn_scoreboard` con `sample-data/` |
 | El proveedor esta caido | ESPN es API publica, no garantizada | El sync reintenta 3 veces; si persiste, no cambia estados: deja todo `Pendiente` |
 | Un partido quedo con resultado raro | Discrepancia | Se marca `Revision manual`; revisalo y corrigelo a mano en el Sheet |
