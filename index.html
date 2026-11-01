@@ -5,21 +5,74 @@
 html[data-theme="claro"]{color-scheme:light;--bg:#f4f7fc;--panel:#ffffff;--panel2:#eaf0f9;--line:#d3ddeb;--txt:#15202e;--muted:#5b6b81;--green:#07734b;--red:#c02736;--amber:#9a6606;--blue:#1f5b9c;--glow:radial-gradient(ellipse at 88% 0%,#d8e6fb,transparent 45%);--metric-bg:#ffffff;--metric-line:#dde5f0;--line2:#e5ebf4;--track:#dde4ee;--input-bg:#ffffff;--input-line:#bfcbdd;--btn-bg:#234563;--btn-line:#2f5678;--btn-alt-bg:#0b7a66;--btn-alt-line:#12a48d;--live-bg:#fdecec;--live-line:#e3b3b8;--stale-bg:#fdf4e3;--stale-line:#e2ce9f;--res-ok-line:#a8ddc6;--res-no-line:#eeb6ba;--res-amb-line:#e9d6a5;--btn-txt:#fff;--res-ok-bg:rgba(11,121,79,.09);--res-no-bg:rgba(192,39,54,.09);--res-amb-bg:rgba(154,102,6,.09)}*{box-sizing:border-box}body{margin:0;background:var(--glow),var(--bg);font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--txt);font-size:16px;line-height:1.5;-webkit-text-size-adjust:100%}main{max-width:1170px;margin:auto;padding:24px 14px 55px}h1{font-size:clamp(34px,5vw,50px);letter-spacing:-.035em;margin:4px 0 10px;line-height:1.12}h2{font-size:clamp(22px,3vw,28px);margin:0 0 8px;line-height:1.2}p{color:var(--muted);line-height:1.6;margin:5px 0;font-size:15px}.eyebrow{color:var(--green);font-size:13px;letter-spacing:.14em;font-weight:800;text-transform:uppercase;line-height:1.4}.head{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:center;margin:0 0 20px}.headright{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.tema{width:46px;height:46px;padding:0;font-size:20px;line-height:1;border-radius:12px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}.pill,.badge{font-size:13px;color:var(--muted);border:1px solid var(--line);padding:8px 13px;border-radius:18px;white-space:nowrap;line-height:1.35}.badge{color:var(--amber)}.badge.ok{color:var(--green)}.badge.no{color:var(--red)}.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:23px}.stat,.card,.note{background:var(--panel);border:1px solid var(--line);border-radius:16px}.stat{padding:19px 18px}.stat span,.metric span{font-size:13px;color:var(--muted);display:block;letter-spacing:.02em}.stat strong{font-size:30px;display:block;margin:6px 0 2px;letter-spacing:-.02em;line-height:1.1}.green{color:var(--green)}.red{color:var(--red)}.muted{color:var(--muted)}.card{padding:22px;margin:0 0 16px}.cardtop{display:flex;gap:15px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}.cardtop .badge{margin-top:2px}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.metric{background:var(--metric-bg);border:1px solid var(--metric-line);border-radius:10px;padding:12px}.metric strong{display:block;margin-top:6px;font-size:21px;letter-spacing:-.01em}.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:11px}table{width:100%;border-collapse:collapse;min-width:720px}td,th{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line2);font-size:15px;line-height:1.45}th{background:var(--panel2);color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;white-space:nowrap}tr:last-child td{border-bottom:0}td b{display:block;font-size:16px;line-height:1.35}td small{color:var(--muted);display:block;margin-top:4px;font-size:13px;line-height:1.4}.ticketfoot{margin:13px 0 0;font-size:14px;color:var(--muted)}.tools{display:flex;gap:11px;flex-wrap:wrap;margin:22px 0}.bar{height:10px;border-radius:10px;background:var(--track);overflow:hidden;margin:16px 0 26px}.bar>div{height:100%;background:var(--green)}.footgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.note{padding:17px}.note h3{font-size:16px;margin:0 0 9px}.note p{font-size:14px;line-height:1.6}.hint{margin:14px 0 24px;font-size:13px;color:var(--muted);line-height:1.6}.sidehead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:30px 0 15px}.weekbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 22px}.weekbar label{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.03em}select,input{background:var(--input-bg);color:var(--txt);font:inherit;font-size:15px;padding:11px 11px;border:1px solid var(--input-line);border-radius:10px;min-height:44px}button{font:inherit;font-weight:700;font-size:15px;border:1px solid var(--btn-line);color:var(--btn-txt);background:var(--btn-bg);border-radius:11px;padding:12px 17px;cursor:pointer;min-height:46px;transition:filter .15s,transform .1s}button:hover{filter:brightness(1.12)}button:active{transform:translateY(1px)}button:disabled{opacity:.6;cursor:progress}button.alt{background:var(--btn-alt-bg);border-color:var(--btn-alt-line)}button.redbtn{background:transparent;color:var(--red);border-color:var(--live-line)}.live{display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:4px 10px;border-radius:12px;border:1px solid var(--live-line);background:var(--live-bg);color:var(--red);white-space:nowrap}.live b{color:var(--txt);font-size:13px;font-weight:700}.live.on{animation:pulse 1.6s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.62}}.vivos{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.vivocard{background:var(--metric-bg);border:1px solid var(--line);border-radius:13px;padding:14px}.vivocard .vtop{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:6px}.vivocard .vscore{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1.15}.vivocard .vteams{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);gap:10px;line-height:1.4}.vivocard .vteams span:first-child{text-align:left}.vivocard .vteams span:last-child{text-align:right}.vdetalle{font-size:12px;color:var(--muted);margin-top:7px;line-height:1.45}.stato{display:inline-block;font-size:12px;font-weight:700;padding:3px 9px;border-radius:11px;border:1px solid var(--line);white-space:nowrap;margin-left:7px;vertical-align:middle;letter-spacing:.02em}.stato.win{color:var(--green);border-color:var(--res-ok-line);background:var(--res-ok-bg)}.stato.lose{color:var(--red);border-color:var(--res-no-line);background:var(--res-no-bg)}.stato.push{color:var(--amber);border-color:var(--res-amb-line);background:var(--res-amb-bg)}.stato.wait{color:var(--muted);background:var(--metric-bg)}.stale{background:var(--stale-bg);border-color:var(--stale-line);color:var(--amber);padding:11px 14px;border-radius:11px;font-size:15px;margin:0 0 16px}.loading{color:var(--muted);font-size:15px;padding:24px 0}.res{display:inline-block;font-size:13px;padding:4px 10px;border-radius:12px;border:1px solid var(--line);color:var(--muted);font-weight:600;white-space:nowrap}.res.Ganada,.res.Acertado{color:var(--green);border-color:var(--res-ok-line)}.res.Perdida,.res.Fallado{color:var(--red);border-color:var(--res-no-line)}.res.Anulada,.res.Anulado{color:var(--amber);border-color:var(--res-amb-line)}.res.Revisión{color:var(--amber);border-color:var(--res-amb-line)}
 @media(max-width:980px){.stats{grid-template-columns:repeat(3,1fr)}.metrics{grid-template-columns:repeat(2,1fr)}.footgrid{grid-template-columns:1fr}}
 @media(max-width:680px){.stats{grid-template-columns:repeat(2,1fr);gap:9px}.card{padding:14px}.stat{padding:15px 14px}.stat strong{font-size:24px}.metric strong{font-size:19px}.footgrid{grid-template-columns:1fr}main{padding:20px 12px 48px}h1{letter-spacing:-.03em}.head{gap:14px;margin-bottom:18px}.headright{width:100%;justify-content:space-between}.vivos{grid-template-columns:1fr}.tools{gap:9px}.tools button{flex:1 1 auto;min-width:44%}button{padding:12px 14px}.sidehead{margin:24px 0 13px}td,th{padding:12px 12px}.cardtop{gap:10px}}
+
+/* --- Pestañas / secciones colapsables --- */
+.tabs{display:flex;gap:8px;overflow-x:auto;position:sticky;top:0;z-index:30;padding:11px 0 13px;margin:0 0 4px;background:var(--bg);-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:9px 15px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--txt);cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:7px}
+.tab:hover{filter:brightness(1.08)}
+.tab.on{background:var(--btn-bg);border-color:var(--btn-line);color:var(--btn-txt)}
+.tab.ghost{background:transparent;border-style:dashed;color:var(--muted)}
+.tab .tcount{font-size:11px;font-weight:800;padding:2px 7px;border-radius:10px;background:var(--panel2);color:var(--muted);border:1px solid var(--line)}
+.tab.on .tcount{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.3);color:var(--btn-txt)}
+.seccion{background:var(--panel);border:1px solid var(--line);border-radius:16px;margin:0 0 14px;overflow:hidden}
+.sechead{width:100%;display:flex;align-items:center;gap:11px;background:transparent;border:0;border-radius:0;padding:16px 18px;min-height:58px;cursor:pointer;color:var(--txt);text-align:left;box-shadow:none}
+.sechead:hover{filter:none;background:var(--panel2)}
+.sechead:active{transform:none}
+.sechead:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
+.seccion[data-open="1"] .sechead{border-bottom:1px solid var(--line2)}
+.setico{font-size:19px;line-height:1;flex:0 0 auto}
+.setitle{font-size:17px;font-weight:800;letter-spacing:-.015em;line-height:1.3}
+.sebadge{font-size:12px;font-weight:700;padding:3px 10px;border-radius:11px;border:1px solid var(--line);color:var(--muted);white-space:nowrap;line-height:1.4}
+.sebadge.ok{color:var(--green);border-color:var(--res-ok-line);background:var(--res-ok-bg)}
+.sebadge.no{color:var(--red);border-color:var(--res-no-line);background:var(--res-no-bg)}
+.chev{margin-left:auto;color:var(--muted);font-size:12px;flex:0 0 auto;transition:transform .2s}
+.seccion[data-open="0"] .chev{transform:rotate(-90deg)}
+.secbody{padding:18px}
+.seccion[data-open="0"] .secbody{display:none}
+@media(max-width:680px){.tabs{top:0}.tab{font-size:13px;padding:8px 12px}.setitle{font-size:16px}.sechead{padding:14px}.secbody{padding:14px}}
 @media print{body{background:white;color:#111}.card,.stat,.note{color:#111;background:white;border-color:#ddd}.metric{background:white;color:#111}.pill,.badge,p,td small,.hint,.res{color:#555}.res{border-color:#ccc}button,.tools,.weekbar{display:none}}
 </style></head><body><main>
-<div class="head"><div><div class="eyebrow">🏈 NFL · temporada 2026</div><h1>Mi control de apuestas</h1><p id="subtitulo">Pronósticos, parlays y resultados de la temporada</p></div><div class="headright"><div class="pill" id="sync-info">Cargando datos…</div><button id="tema" class="tema" title="Cambiar entre tema oscuro y claro" aria-label="Cambiar tema">🌙</button></div></div>
+<div class="head"><div><div class="eyebrow">🏈 NFL · temporada 2026</div><h1>Mi control de apuestas</h1><p id="subtitulo">Pronósticos, parlays y resultados de la temporada</p></div><div class="headright"><div class="pill" id="sync-info">Cargando datos…</div><button id="reload-head" data-txt="🔄 Actualizar" title="Actualizar datos del Sheet y el marcador en vivo">🔄 Actualizar</button><button id="tema" class="tema" title="Cambiar entre tema oscuro y claro" aria-label="Cambiar tema">🌙</button></div></div>
 <div id="aviso"></div>
 <div id="vivo"></div>
 <div class="stats"><div class="stat"><span>Apuestas confirmadas</span><strong id="betcount">—</strong></div><div class="stat"><span>Total arriesgado</span><strong id="risk">—</strong></div><div class="stat"><span>Cobro potencial total</span><strong id="potential" class="green">—</strong></div><div class="stat"><span>Cobros confirmados</span><strong id="cobrado">—</strong></div><div class="stat"><span>Aciertos en quiniela</span><strong id="acc">—</strong></div></div>
 <div class="weekbar"><label for="week">Semana NFL</label><select id="week"><option value="">Todas</option></select><span class="pill" id="week-status">—</span></div>
-<div class="sidehead"><h2>Mis boletos confirmados</h2><span class="pill">Detalle financiero por boleto en el Sheet privado</span></div>
-<div id="tickets"></div>
-<div class="sidehead"><h2>Quiniela original</h2><span class="pill" id="picks-status">—</span></div>
+
+<nav class="tabs" id="tabs" aria-label="Secciones del tablero">
+<button class="tab" data-goto="vivo" type="button"><span aria-hidden="true">📺</span>Marcador en vivo<span class="tcount" id="tabcnt-vivo">—</span></button>
+<button class="tab" data-goto="tickets" type="button"><span aria-hidden="true">🎟️</span>Mis boletos<span class="tcount" id="tabcnt-tickets">—</span></button>
+<button class="tab" data-goto="picks" type="button"><span aria-hidden="true">📋</span>Quiniela<span class="tcount" id="tabcnt-picks">—</span></button>
+<button class="tab" data-goto="ayuda" type="button"><span aria-hidden="true">ℹ️</span>Ayuda</button>
+<button class="tab ghost" id="toggle-todo" type="button">Desplegar todo</button>
+</nav>
+
+<section class="seccion" id="sec-vivo" data-open="1">
+<button class="sechead" type="button" data-sec="vivo" aria-expanded="true" aria-controls="cuerpo-vivo"><span class="setico" aria-hidden="true">📺</span><span class="setitle">Marcador en vivo</span><span class="sebadge" id="cnt-vivo">—</span><span class="chev" aria-hidden="true">▾</span></button>
+<div class="secbody" id="cuerpo-vivo"><div id="vivo"></div></div>
+</section>
+
+<section class="seccion" id="sec-tickets" data-open="1">
+<button class="sechead" type="button" data-sec="tickets" aria-expanded="true" aria-controls="cuerpo-tickets"><span class="setico" aria-hidden="true">🎟️</span><span class="setitle">Mis boletos confirmados</span><span class="sebadge" id="cnt-tickets">—</span><span class="chev" aria-hidden="true">▾</span></button>
+<div class="secbody" id="cuerpo-tickets"><div id="tickets"></div></div>
+</section>
+
+<section class="seccion" id="sec-picks" data-open="0">
+<button class="sechead" type="button" data-sec="picks" aria-expanded="false" aria-controls="cuerpo-picks"><span class="setico" aria-hidden="true">📋</span><span class="setitle">Quiniela original</span><span class="sebadge" id="cnt-picks">—</span><span class="chev" aria-hidden="true">▾</span></button>
+<div class="secbody" id="cuerpo-picks">
 <div class="bar"><div id="progress" style="width:0"></div></div>
-<div class="tools"><button class="alt" id="export">Exportar historial CSV</button><button id="print">Imprimir / guardar PDF</button><button id="reload">Actualizar datos</button></div>
+<div class="tools"><button class="alt" id="export">Exportar historial CSV</button><button id="print">Imprimir / guardar PDF</button><button id="reload" data-txt="Actualizar datos">Actualizar datos</button></div>
 <div class="scroll"><table><thead><tr><th>#</th><th>Fecha</th><th>Mi pick</th><th>Rival</th><th>Resultado</th><th>Marcador</th></tr></thead><tbody id="picks"></tbody></table></div>
-<div class="footgrid" style="margin-top:19px"><div class="note"><h3>Cómo se usa</h3><p>Este tablero es de solo lectura y muestra los resultados que el sincronizador obtiene desde tu Google Sheets privado. El detalle completo —importes por boleto, cobros reales y notas de conciliación— se edita en el Sheet y se publica de forma sanitizada.</p></div><div class="note"><h3>Cómo se calculan los balances</h3><p>Ganado o cerrado: cobro real menos dinero apostado. Perdido: se descuenta lo apostado. Devuelto: diferencia entre devolución y apuesta. Abierto: todavía no se refleja ganancia ni pérdida liquidada. La quiniela es un registro de pronósticos y no duplica el dinero de los parlays.</p></div></div>
+</div>
+</section>
+
+<section class="seccion" id="sec-ayuda" data-open="0">
+<button class="sechead" type="button" data-sec="ayuda" aria-expanded="false" aria-controls="cuerpo-ayuda"><span class="setico" aria-hidden="true">ℹ️</span><span class="setitle">Ayuda y reglas</span><span class="chev" aria-hidden="true">▾</span></button>
+<div class="secbody" id="cuerpo-ayuda">
+<div class="footgrid"><div class="note"><h3>Cómo se usa</h3><p>Este tablero es de solo lectura y muestra los resultados que el sincronizador obtiene desde tu Google Sheets privado. El detalle completo —importes por boleto, cobros reales y notas de conciliación— se edita en el Sheet y se publica de forma sanitizada.</p></div><div class="note"><h3>Cómo se calculan los balances</h3><p>Ganado o cerrado: cobro real menos dinero apostado. Perdido: se descuenta lo apostado. Devuelto: diferencia entre devolución y apuesta. Abierto: todavía no se refleja ganancia ni pérdida liquidada. La quiniela es un registro de pronósticos y no duplica el dinero de los parlays.</p></div></div>
 <p class="hint">Los marcadores provienen de un proveedor público de resultados NFL y se verifican contra el Sheet antes de publicarse. Un partido sin marcador final confirmado permanece como pendiente; nunca se rellena con ceros. Si la última sincronización es antigua, el dato puede estar desfasado.</p>
+</div>
+</section>
 </main><script>
 'use strict';
 const DATA_URL='data/public-nfl.json';
@@ -56,7 +109,29 @@ function _clavePartido(fecha,eqA,eqB){
   return fecha+'|'+[a,b].sort().join('|');
 }
 
-function guardarPreferencias(){try{localStorage.setItem(STORAGE,JSON.stringify({semana:SEMANA}))}catch{}}
+let SECCIONES={vivo:1,tickets:1,picks:0,ayuda:0};
+function guardarPreferencias(){try{localStorage.setItem(STORAGE,JSON.stringify({semana:SEMANA,secciones:SECCIONES}))}catch{}}
+function aplicarSecciones(){
+  for(const clave in SECCIONES){
+    const sec=document.getElementById('sec-'+clave);
+    if(!sec)continue;
+    sec.dataset.open=SECCIONES[clave]?'1':'0';
+    const cab=sec.querySelector('.sechead');
+    if(cab)cab.setAttribute('aria-expanded',SECCIONES[clave]?'true':'false');
+  }
+  const todos=Object.keys(SECCIONES).every(k=>SECCIONES[k]);
+  const btn=document.getElementById('toggle-todo');
+  if(btn)btn.textContent=todos?'Plegar todo':'Desplegar todo';
+}
+function alternarSeccion(clave){
+  SECCIONES[clave]=SECCIONES[clave]?0:1;
+  aplicarSecciones();guardarPreferencias();
+}
+function irA(clave){
+  if(!SECCIONES[clave]){SECCIONES[clave]=1;aplicarSecciones();guardarPreferencias()}
+  const sec=document.getElementById('sec-'+clave);
+  if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});
+}
 function leerPreferencias(){try{const o=JSON.parse(localStorage.getItem(STORAGE)||'{}');return o&&typeof o==='object'?o:{}}catch{return{}}}
 
 function clasificarSeleccion(r){
@@ -307,12 +382,46 @@ function renderVivo(){
       '<span>'+escapeHTML(v.local.nombre)+'</span></div>'+piernas+'</div>';
   }).join('');
 
-  box.innerHTML='<div class="sidehead"><h2>Marcador en vivo</h2>'+
-    '<span class="pill">Consulta directa al proveedor público, en solo lectura</span></div>'+
-    '<div class="vivos">'+tarjetas+'</div>';
+  box.innerHTML='<div class="vivos">'+tarjetas+'</div>';
 }
 
-function render(){renderSemanas();renderBoletos();renderPicks();resumen();renderAviso();renderVivo()}
+function render(){renderSemanas();renderBoletos();renderPicks();resumen();renderAviso();renderVivo();renderContadores()}
+
+function renderContadores(){
+  // Contador de la seccion de marcador en vivo
+  const vivos=document.querySelectorAll('#vivo .vivocard').length;
+  const enVivo=document.querySelectorAll('#vivo .live.on').length;
+  const setCnt=(id,val)=>{const e=document.getElementById(id);if(e)e.textContent=val};
+  setCnt('tabcnt-vivo',enVivo?enVivo+' en vivo':(vivos||'—'));
+  setCnt('cnt-vivo',vivos?(vivos+' partidos'+(enVivo?' · '+enVivo+' en vivo':'')):(vivos===0?'Sin partidos':'—'));
+
+  // Contador de boletos: cuantos están ganados / perdidos
+  const legs=DATA.selecciones||[];
+  const porBoleto={};
+  for(const s of legs){
+    const b=(s.boleto||'—');
+    porBoleto[b]=porBoleto[b]||{g:0,p:0,o:0};
+    if(s.resultado==='Ganada')porBoleto[b].g++;
+    else if(s.resultado==='Perdida')porBoleto[b].p++;
+    else porBoleto[b].o++;
+  }
+  const nb=Object.keys(porBoleto).length;
+  setCnt('tabcnt-tickets',nb||'—');
+  const bt=document.querySelector('#sec-tickets .sebadge');
+  if(bt){
+    const g=Object.values(porBoleto).reduce((a,x)=>a+x.g,0);
+    const p=Object.values(porBoleto).reduce((a,x)=>a+x.p,0);
+    bt.textContent=nb?(nb+' boletos · '+g+' ganadas · '+p+' perdidas'):'—';
+  }
+
+  // Contador de la quiniela
+  const picks=DATA.picks||[];
+  const res=picks.filter(p=>p.resultado==='Acertado').length;
+  const fal=picks.filter(p=>p.resultado==='Fallado').length;
+  setCnt('tabcnt-picks',picks.length?res+'/'+(res+fal):'—');
+  const pt=document.querySelector('#sec-picks .sebadge');
+  if(pt)pt.textContent=picks.length?(res+' aciertos · '+fal+' fallos · '+(picks.length-res-fal)+' pendientes'):'—';
+}
 
 function csv(){
   const rows=[['Semana','Fecha','Boleto','Equipo','Rival','Mercado','Seleccion','Momio','Resultado','Marcador']];
@@ -341,6 +450,19 @@ async function cargar(){
 }
 
 document.getElementById('week').addEventListener('change',e=>{SEMANA=e.target.value;guardarPreferencias();render()});
+
+// --- Pestanas y secciones colapsables ---
+document.querySelectorAll('.sechead').forEach(cab=>{
+  cab.addEventListener('click',()=>alternarSeccion(cab.dataset.sec));
+});
+document.querySelectorAll('.tab[data-goto]').forEach(tab=>{
+  tab.addEventListener('click',()=>irA(tab.dataset.goto));
+});
+document.getElementById('toggle-todo').addEventListener('click',()=>{
+  const todos=Object.keys(SECCIONES).every(k=>SECCIONES[k]);
+  for(const k in SECCIONES)SECCIONES[k]=todos?0:1;
+  aplicarSecciones();guardarPreferencias();
+});
 document.getElementById('export').onclick=()=>{
   const file=new Blob([csv()],{type:'text/csv;charset=utf-8'});
   const url=URL.createObjectURL(file),a=document.createElement('a');
@@ -362,14 +484,19 @@ function aplicarTema(t,persistir){
 }
 document.getElementById('tema').onclick=()=>aplicarTema(temaActual()==='claro'?'oscuro':'claro');
 aplicarTema((function(){try{var g=localStorage.getItem(TEMA_KEY);if(g)return g;return (window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'claro':'oscuro'}catch{return 'oscuro'}})(),false);
-document.getElementById('reload').onclick=async()=>{
-  const b=document.getElementById('reload');
+async function recargarDatos(boton){
+  const b=boton||document.getElementById('reload');
+  const txt=b.dataset.txt||b.textContent;
   b.disabled=true;b.textContent='Actualizando…';
-  try{await cargar();await cargarVivo()}finally{b.disabled=false;b.textContent='Actualizar datos'}
-};
+  try{await cargar();await cargarVivo()}finally{b.disabled=false;b.textContent=txt}
+}
+document.getElementById('reload').onclick=e=>recargarDatos(e.currentTarget);
+document.getElementById('reload-head').onclick=e=>recargarDatos(e.currentTarget);
 
 const pref=leerPreferencias();
 SEMANA=pref.semana||'';
+if(pref.secciones&&typeof pref.secciones==='object')SECCIONES=Object.assign(SECCIONES,pref.secciones);
+aplicarSecciones();
 cargar();
 // El marcador en vivo se refresca solo cada minuto mientras la pestana
 // este abierta. Los resultados ya liquidados solo cambian cuando el
