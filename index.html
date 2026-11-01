@@ -99,8 +99,7 @@ function renderBoletos(){
       if(r.estado==='VA GANANDO')g++; else if(r.estado==='VA PERDIENDO')p++; else w++;
     }
     const vivoTxt=p>0?`<span class="stato lose">${p} PERDIENDO</span>`
-      :(g>0?`<span class="stato win">${g} GANANDO</span>`
-        :`<span class="stato wait">SIN EMPEZAR</span>`);
+      :(g>0?`<span class="stato win">${g} GANANDO</span>`:'');
     const faltan=w?`<span class="stato wait">${w} SIN EMPEZAR</span>`:'';
     return `<section class="card" aria-label="Boleto ${escapeHTML(boleto)}"><div class="cardtop"><div><div class="eyebrow">🎟️ ${escapeHTML(boleto)}</div><h2>${legs.length} ${legs.length===1?'selección':'selecciones'}</h2><div style="margin-top:7px">${vivoTxt}${faltan}</div></div><div class="badge ${badge}">${escapeHTML(estado)}</div></div>
     <div class="scroll"><table><thead><tr><th>Selección</th><th>Mercado</th><th>Fecha</th><th>Momio</th><th>Resultado</th></tr></thead><tbody>${legs.map(l=>{
@@ -203,7 +202,9 @@ async function cargarVivo(){
       porEquipo.set(fecha+'|'+_aliasEq(visitante.nombre),info);
     }
     VIVO=porPareja; VIVO_POR_EQUIPO=porEquipo;
-    renderVivo();
+    // Se re-renderiza todo: las tablas de boletos y de la quiniela tambien
+    // llevan el estado vivo de cada pierna.
+    render();
   }catch(e){
     box.innerHTML='<div class="note"><h3>Marcador en vivo no disponible</h3><p>No se pudo consultar al proveedor de resultados ('+escapeHTML(String(e.message))+'). Los resultados ya liquidados siguen visibles; el marcador en vivo require conexion a internet.</p></div>';
   }
