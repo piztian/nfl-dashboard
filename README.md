@@ -194,3 +194,11 @@ El cálculo en vivo usa las mismas reglas que el backend
 > momento.
 
 El tablero se refresca solo cada 60 segundos con la pestaña visible.
+
+## Tipografía y acabado
+
+Escala tipográfica uniforme (~1.18x) sobre 16px de base, con `clamp()` en
+los titulares para que escalen con el ancho de pantalla. Los botones y
+selectores tienen `min-height` de 46px/44px para targets táctiles, y el
+breakpoint móvil (680px) compacta las tarjetas, pone las estadísticas a dos
+columnas y los vivos a una sola.
