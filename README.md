@@ -69,5 +69,3 @@ desde la consola del navegador:
 ```js
 localStorage.removeItem('nfl-2026-week8-ledger-v2')
 ```
-
-<!-- trigger test 1793514848 -->
