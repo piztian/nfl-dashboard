@@ -43,3 +43,29 @@ autorización aparte; no se agregan credenciales a este repositorio).
 ## Publicación
 
 GitHub Pages, rama `main`, carpeta `/ (root)`.
+
+## Actualizar el dashboard (semana a semana)
+
+1. Edita `index.html` localmente (los arrays `ticketData` y `games` al inicio del `<script>`).
+2. Sube el cambio:
+
+```bash
+cd <ruta-del-repo>
+git add index.html
+git commit -m "feat: actualizar semana N"
+git push origin main
+```
+
+3. GitHub Actions publica automáticamente (~20 s). La URL no cambia.
+
+Si prefieres que el agente lo haga, mándale el HTML nuevo y lo publica con este mismo flujo.
+
+### Reiniciar el estado del navegador
+
+Si quieres dejar los resultados en cero (por ejemplo, para una nueva semana), abre la
+página en el navegador y usa **Borrar resultados manuales**. También se puede limpiar
+desde la consola del navegador:
+
+```js
+localStorage.removeItem('nfl-2026-week8-ledger-v2')
+```
