@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-11-01T12:45:57+00:00",
+  "generado_en": "2026-11-01T18:07:09+00:00",
   "fuente": "espn",
   "temporada": 2026,
   "boletos_publicos": [
@@ -26,7 +26,7 @@
       "seleccion": "Bengals",
       "cuota_capturada": "-667",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#2 Mixto"
     },
     {
@@ -38,7 +38,7 @@
       "seleccion": "Jaguars",
       "cuota_capturada": "-481",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#2 Mixto"
     },
     {
@@ -62,7 +62,7 @@
       "seleccion": "Menos de 43.0",
       "cuota_capturada": "-105",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#2 Mixto"
     },
     {
@@ -86,7 +86,7 @@
       "seleccion": "Falcons",
       "cuota_capturada": "+107",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#3 Underdogs"
     },
     {
@@ -98,7 +98,7 @@
       "seleccion": "Raiders",
       "cuota_capturada": "+105",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#3 Underdogs"
     },
     {
@@ -122,7 +122,7 @@
       "seleccion": "Lions -3.5",
       "cuota_capturada": "+100",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#4 Hándicaps"
     },
     {
@@ -134,7 +134,7 @@
       "seleccion": "Steelers -3.5",
       "cuota_capturada": "-105",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#4 Hándicaps"
     },
     {
@@ -146,7 +146,7 @@
       "seleccion": "Jaguars -10.0",
       "cuota_capturada": "-105",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#4 Hándicaps"
     },
     {
@@ -158,7 +158,7 @@
       "seleccion": "Raiders +1.5",
       "cuota_capturada": "-110",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#4 Hándicaps"
     },
     {
@@ -170,7 +170,7 @@
       "seleccion": "Ravens +3.0",
       "cuota_capturada": "+100",
       "resultado": "Pendiente",
-      "marcador": "",
+      "marcador": "Revisión manual",
       "boleto": "#4 Hándicaps"
     }
   ],
