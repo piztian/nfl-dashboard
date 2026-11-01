@@ -368,19 +368,24 @@ function renderVivo(){
 
   const tarjetas=[...grupos.values()].map(g=>{
     const v=g.v, enVivo=v.estado==='in';
-    const pts=x=>(x&&x.pts!=null&&x.pts!=='')?x.pts:'—';
+    // Un partido 'pre' trae "0" desde el proveedor: no es un marcador real.
+    const started=v.estado!=='pre';
+    const pts=x=>(x&&x.pts!=null&&x.pts!==''&&(started||String(x.pts)!=='0'))?x.pts:'—';
     const det=v.detalle||'';
     const chip=enVivo
       ? '<span class="live on">● EN VIVO <b>'+escapeHTML(det)+'</b></span>'
       : (v.estado==='post'
         ? '<span class="badge ok">Final</span>'
         : '<span class="badge">Programado</span>');
+    // En partidos programados se muestra la hora de inicio.
+    const hora=v.estado==='pre'&&v.periodo?v.periodo:'';
     const piernas=g.items.map(i=>
       '<div class="vdetalle">'+escapeHTML(i.seleccion||i.mercado)+'</div>').join('');
     return '<div class="vivocard"><div class="vtop">'+chip+
       '<span class="vscore">'+pts(v.visitante)+' – '+pts(v.local)+'</span></div>'+
       '<div class="vteams"><span>'+escapeHTML(v.visitante.nombre||'')+'</span>'+
-      '<span>'+escapeHTML(v.local.nombre||'')+'</span></div>'+piernas+'</div>';
+      '<span>'+escapeHTML(v.local.nombre||'')+'</span></div>'+
+      (hora?'<div class="vdetalle">'+escapeHTML(hora)+'</div>':'')+piernas+'</div>';
   }).join('');
 
   box.innerHTML='<div class="vivos">'+tarjetas+'</div>';
