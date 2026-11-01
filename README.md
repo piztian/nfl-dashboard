@@ -1,71 +1,132 @@
 # NFL Dashboard 2026
 
-Dashboard personal de pronósticos, parlays y estadísticas NFL 2026.
+Control de pronósticos, parlays y resultados NFL 2026.
 
-## Contenido
+**Dashboard público:** https://piztian.github.io/nfl-dashboard/
+**Fuente de verdad:** Google Sheets privado (ver `OPERACION.md`)
 
-- 13 picks originales de la Semana 8 (quiniela).
-- 3 parlays confirmados de Playdoit ($300 MXN apostados).
-- Seguimiento de aciertos, fallos y selecciones anuladas.
-- Cálculo de resultados financieros por boleto.
-- Exportación de historial en CSV.
+---
 
-## Uso
+## Qué es
 
-Abrir `index.html` en cualquier navegador. No requiere build ni dependencias.
+Un tablero de **solo lectura** que muestra:
 
-### Controles
+- Los **13 picks** de la Semana 8 (pronósticos a ganador directo).
+- Las **13 selecciones** de los **3 parlays** de Playdoit, con su mercado,
+  línea y momio capturado.
+- El **resultado** de cada selección y pick, liquidado automáticamente contra
+  un proveedor de resultados NFL.
+- Los **agregados**: aciertos, fallos, pendientes, boletototal apostado y
+  cobro potencial.
 
-| Botón | Acción |
-|---|---|
-| Exportar historial CSV | Descarga el historial completo en CSV (con BOM, compatible con Excel en español). |
-| Copiar resumen | Copia un resumen textual de los boletos al portapapeles. |
-| Imprimir / guardar PDF | Abre el diálogo de impresión con estilos de impresión ya definidos. |
-| Borrar resultados manuales | Reinicia estados y cobros. Las apuestas y los 13 picks se conservan. |
+## Qué NO es (por diseño)
 
-En cada boleto se marca el resultado de cada selección y luego el estado real del boleto
-(abierto, ganado, perdido, devuelto o cobro anticipado) junto con el importe efectivamente
-cobrado.
+- **No** muestra IDs de boleto, importes por boleto, cobros reales por boleto
+  ni notas de conciliación. Eso vive únicamente en el Sheet privado.
+- **No** escribe nada en el Sheet ni en ningún otro sitio. Es de solo lectura.
+- **No** coloca apuestas ni inicia sesión en ninguna casa de apuestas.
+- **No** inventa resultados ni cobros. Sin marcador final confirmado, todo
+  queda `Pendiente`.
 
-## Persistencia
+---
 
-Los datos se guardan **únicamente en el `localStorage` del navegador actual**.
-No se sincronizan entre computadora y celular, y no hay base de datos ni servicios externos.
+## Arquitectura
 
-Para respaldar, usa **Exportar historial CSV**. Si más adelante se quiere sincronización
-entre dispositivos, se puede conectar una base de datos como Supabase (requiere
-autorización aparte; no se agregan credenciales a este repositorio).
+```
+Google Sheets PRIVADO  ──►  nfl_sync.py  ──►  data/public-nfl.json  ──►  Pages
+   (fuente de verdad)        (sincroniza)      (SANITIZADO)              (este sitio)
+```
+
+La sincronización corre en **GitHub Actions**, así que funciona aunque tu
+computadora esté apagada. Cada 20 minutos consulta los resultados, los liquida
+y publica un JSON sanitizado; el dashboard lo lee.
+
+Detalle completo en [`OPERACION.md`](OPERACION.md).
+
+---
 
 ## Estructura
 
-- `index.html` — archivo único: HTML + CSS + JS embebidos, sin dependencias externas.
+```
+index.html                     Dashboard (solo lectura, lee el JSON)
+data/public-nfl.json           Datos publicados, sanitizados
+scripts/nfl_markets.py         Reglas de liquidacion (Moneyline/Spread/Over-Under)
+scripts/nfl_client.py          Cliente del proveedor NFL + emparejamiento
+scripts/nfl_sync.py            Orquestador: Sheet -> liquidacion -> JSON
+scripts/validate_public.py     Verifica que el JSON no lleve datos privados
+tests/test_markets.py          Pruebas de reglas de mercado
+tests/test_integration.py      Pruebas de integracion e idempotencia
+sample-data/                   Fixtures anonimizados del proveedor
+config/example.env             Nombres de variables (sin valores)
+.github/workflows/pages.yml    Despliegue del sitio
+.github/workflows/nfl-sync.yml Sincronizacion programada
+```
 
-## Publicación
+## Uso
 
-GitHub Pages, rama `main`, carpeta `/ (root)`.
+No requiere build ni dependencias: es HTML, CSS y JS embebidos más un JSON.
 
-## Actualizar el dashboard (semana a semana)
+**Selector de semana** arriba: filtra por semana NFL. Elige "Todas" para ver
+la temporada completa.
 
-1. Edita `index.html` localmente (los arrays `ticketData` y `games` al inicio del `<script>`).
-2. Sube el cambio:
+**Exportar historial CSV** descarga el historial completo (con BOM, compatible
+con Excel en español).
+
+**Actualizar datos** vuelve a pedir el JSON al servidor.
+
+**Imprimir / guardar PDF** abre el diálogo de impresión con estilos de
+impresión ya definidos.
+
+---
+
+## Reglas de liquidación
+
+| Mercado | Regla |
+|---|---|
+| Moneyline | Ganador final. Empate → `Revisión manual`. |
+| Spread | `margen + spread > 0` gana · `< 0` pierde · `= 0` push |
+| Under 43.0 | 42 o menos gana · 43 push · 44 o más pierde |
+| Under 43.5 | 43 o menos gana · 44 o más pierde |
+| Over | Regla inversa del Under |
+
+- Un partido sin marcador final confirmado queda `Pendiente`; nunca se rellena
+  con ceros.
+- La prórroga va incluida.
+- El emparejamiento exige **ambos equipos y la fecha**, así que
+  Ravens@Bills (01/11) y Ravens@Jaguars (05/11) nunca se confunden.
+- Una resolución escrita a mano en el Sheet **nunca** se sobreescribe por el
+  sincronizador.
+
+---
+
+## Seguridad
+
+| Dato | Dónde vive |
+|---|---|
+| ID de boleto de Playdoit | Solo en el Sheet privado |
+| Importes y cobros por boleto | Solo en el Sheet privado |
+| `Cobro real` (liquidación) | Solo en el Sheet privado, escritura manual |
+| Correo, tokens, claves | Secrets de GitHub / archivos locales fuera del repo |
+| Nombre del equipo, rival, mercado, momio, resultado | Público (esto sí es apto) |
+
+El pipeline tiene una **barrera automática**: `scripts/validate_public.py`
+revisa el JSON contra una lista de patrones prohibidos (IDs de boleto, IDs de
+spreadsheet, correos, tokens, claves privadas) y de campos permitidos. Si
+detecta algo, el workflow **aborta y no publica**.
+
+---
+
+## Pruebas
 
 ```bash
-cd <ruta-del-repo>
-git add index.html
-git commit -m "feat: actualizar semana N"
-git push origin main
+python3 tests/test_markets.py
+python3 tests/test_integration.py
+python3 scripts/validate_public.py data/public-nfl.json
 ```
 
-3. GitHub Actions publica automáticamente (~20 s). La URL no cambia.
+## Proveniente
 
-Si prefieres que el agente lo haga, mándale el HTML nuevo y lo publica con este mismo flujo.
-
-### Reiniciar el estado del navegador
-
-Si quieres dejar los resultados en cero (por ejemplo, para una nueva semana), abre la
-página en el navegador y usa **Borrar resultados manuales**. También se puede limpiar
-desde la consola del navegador:
-
-```js
-localStorage.removeItem('nfl-2026-week8-ledger-v2')
-```
+Marcadores: API pública de ESPN (`site.api.espn.com`), **no oficial y no
+garantizada**. El sistema valida contra el Sheet y nunca sobreescribe un dato
+existente con información dudosa: en caso de discrepancia marca
+`Revisión manual` y avisa.

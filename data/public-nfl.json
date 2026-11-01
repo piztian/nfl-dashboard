@@ -1,0 +1,291 @@
+{
+  "generado_en": "2026-11-01T12:35:44+00:00",
+  "fuente": "espn",
+  "temporada": 2026,
+  "boletos_publicos": [
+    {
+      "etiqueta": "#2 Mixto",
+      "estado": "Abierto"
+    },
+    {
+      "etiqueta": "#3 Underdogs",
+      "estado": "Abierto"
+    },
+    {
+      "etiqueta": "#4 Hándicaps",
+      "estado": "Abierto"
+    }
+  ],
+  "selecciones": [
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Bengals",
+      "rival": "Titans",
+      "mercado": "Moneyline",
+      "seleccion": "Bengals",
+      "cuota_capturada": "-667",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#2 Mixto"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Jaguars",
+      "rival": "Colts",
+      "mercado": "Moneyline",
+      "seleccion": "Jaguars",
+      "cuota_capturada": "-481",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#2 Mixto"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Rams",
+      "rival": "Chargers",
+      "mercado": "Moneyline",
+      "seleccion": "Rams",
+      "cuota_capturada": "-260",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#2 Mixto"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Falcons",
+      "rival": "Buccaneers",
+      "mercado": "Under",
+      "seleccion": "Menos de 43.0",
+      "cuota_capturada": "-105",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#2 Mixto"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Patriots",
+      "rival": "Dolphins",
+      "mercado": "Under",
+      "seleccion": "Menos de 43.5",
+      "cuota_capturada": "-115",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#2 Mixto"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Falcons",
+      "rival": "Buccaneers",
+      "mercado": "Moneyline",
+      "seleccion": "Falcons",
+      "cuota_capturada": "+107",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#3 Underdogs"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Raiders",
+      "rival": "Jets",
+      "mercado": "Moneyline",
+      "seleccion": "Raiders",
+      "cuota_capturada": "+105",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#3 Underdogs"
+    },
+    {
+      "semana": "9",
+      "fecha": "2026-11-05",
+      "equipo": "Ravens",
+      "rival": "Jaguars",
+      "mercado": "Moneyline",
+      "seleccion": "Ravens",
+      "cuota_capturada": "-152",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#3 Underdogs"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Lions",
+      "rival": "Vikings",
+      "mercado": "Spread",
+      "seleccion": "Lions -3.5",
+      "cuota_capturada": "+100",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#4 Hándicaps"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Steelers",
+      "rival": "Browns",
+      "mercado": "Spread",
+      "seleccion": "Steelers -3.5",
+      "cuota_capturada": "-105",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#4 Hándicaps"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Jaguars",
+      "rival": "Colts",
+      "mercado": "Spread",
+      "seleccion": "Jaguars -10.0",
+      "cuota_capturada": "-105",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#4 Hándicaps"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Raiders",
+      "rival": "Jets",
+      "mercado": "Spread",
+      "seleccion": "Raiders +1.5",
+      "cuota_capturada": "-110",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#4 Hándicaps"
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "equipo": "Ravens",
+      "rival": "Bills",
+      "mercado": "Spread",
+      "seleccion": "Ravens +3.0",
+      "cuota_capturada": "+100",
+      "resultado": "Pendiente",
+      "marcador": "",
+      "boleto": "#4 Hándicaps"
+    }
+  ],
+  "picks": [
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Bills",
+      "rival": "Ravens",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Bengals",
+      "rival": "Titans",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Cowboys",
+      "rival": "Cardinals",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Lions",
+      "rival": "Vikings",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Raiders",
+      "rival": "Jets",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Steelers",
+      "rival": "Browns",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Falcons",
+      "rival": "Buccaneers",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Jaguars",
+      "rival": "Colts",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Rams",
+      "rival": "Chargers",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Chiefs",
+      "rival": "Broncos",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Patriots",
+      "rival": "Dolphins",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-01",
+      "pick": "Commanders",
+      "rival": "Eagles",
+      "resultado": "Pendiente",
+      "marcador": ""
+    },
+    {
+      "semana": "8",
+      "fecha": "2026-11-02",
+      "pick": "Seahawks",
+      "rival": "Bears",
+      "resultado": "Pendiente",
+      "marcador": ""
+    }
+  ],
+  "resumen_publico": {
+    "boletos_confirmados": 3,
+    "apostado_total_mxn": 300.0,
+    "cobro_potencial_total_mxn": 4673.21,
+    "cobro_real_total_mxn": 0.0,
+    "selecciones": 13,
+    "picks": 13
+  }
+}
