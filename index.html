@@ -83,6 +83,7 @@ const STORAGE='nfl-2026-ui-v1';
 const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',minimumFractionDigits:2}).format(n||0);
 const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let DATA=null;
+let ULTIMA_GENERACION=null; // 'generado_en' del JSON ya cargado
 let SEMANA='';
 let VIVO=null;          // mapa 'fecha|equipoA|equipoB' -> partido en vivo
 let VIVO_POR_EQUIPO=null; // mapa 'fecha|equipo' -> partido (para resolver un solo lado)
@@ -165,7 +166,24 @@ function renderBoletos(){
   const etiquetas={};
   (DATA.boletos_publicos||[]).forEach(b=>etiquetas[b.etiqueta]=b.estado);
   container.innerHTML=[...grupos.entries()].map(([boleto,legs])=>{
-    const estado=etiquetas[boleto]||'Abierto';
+    // Estado global del boleto. El Sheet trae una columna 'Estado' que es
+    // manual (conciliacion financiera), asi que solo se usa si NO dice
+    // 'Abierto'. Si dice 'Abierto', se calcula a partir de las piernas:
+    // una pierna perdida pierde el boleto; todas ganadas lo ganan.
+    // (bug observado el 1-nov-2026: el #2 mostraba 'Abierto' con 5/5
+    // ganadas porque el estado global nunca se derivaba de las piernas).
+    let cg=0,cp=0,cw=0;
+    for(const l of legs){
+      const st=clasificarSeleccion(l.resultado);
+      if(st==='Ganada')cg++;
+      else if(st==='Perdida'||st==='Anulada')cp++;
+      else cw++;
+    }
+    let estado=etiquetas[boleto]||'Abierto';
+    if(estado==='Abierto'||!estado){
+      if(cp>0)estado='Perdido';
+      else if(cw===0&&cg>0)estado='Ganado';
+    }
     const badge=estado==='Ganado'?'ok':(estado==='Perdido'?'no':'');
     // Estado vivo del boleto: cuantas piernas van ganando, perdiendo o faltan.
     let g=0,p=0,w=0;
@@ -447,6 +465,7 @@ async function cargar(){
     const r=await fetch(DATA_URL,{cache:'no-store'});
     if(!r.ok)throw new Error('HTTP '+r.status);
     DATA=await r.json();
+    ULTIMA_GENERACION=DATA&&DATA.generado_en||null;
     render();
   }catch(e){
     info.textContent='No se pudo cargar '+DATA_URL;
@@ -490,6 +509,27 @@ function aplicarTema(t,persistir){
 }
 document.getElementById('tema').onclick=()=>aplicarTema(temaActual()==='claro'?'oscuro':'claro');
 aplicarTema((function(){try{var g=localStorage.getItem(TEMA_KEY);if(g)return g;return (window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'claro':'oscuro'}catch{return 'oscuro'}})(),false);
+// Vuelve a leer el JSON de resultados sin tocar la interfaz del usuario.
+// El marcador en vivo se refresca cada minuto, pero los resultados ya
+// liquidados solo cambian cuando el sincronizador escribe en el Sheet.
+// Sin esto, una pestana abierta queda con datos viejos toda la noche
+// (bug observado el 1-nov-2026: el boleto #2 seguia en 'Pendiente'
+// aunque el Sheet ya lo habia cerrado).
+async function recargarSiCambio(){
+  try{
+    const r=await fetch(DATA_URL,{cache:'no-store'});
+    if(!r.ok)return;
+    const nuevo=await r.json();
+    if(!nuevo)return;
+    const gen=nuevo.generado_en||null;
+    if(gen&&gen!==ULTIMA_GENERACION){
+      ULTIMA_GENERACION=gen;
+      DATA=nuevo;
+      render();
+    }
+  }catch(e){/* si falla, se reintenta en el siguiente ciclo */}
+}
+
 async function recargarDatos(boton){
   const b=boton||document.getElementById('reload');
   const txt=b.dataset.txt||b.textContent;
@@ -508,6 +548,6 @@ cargar();
 // este abierta. Los resultados ya liquidados solo cambian cuando el
 // sincronizador de GitHub los escribe en el Sheet.
 cargarVivo();
-setInterval(()=>{if(!document.hidden)cargarVivo()},VIVO_MS);
-document.addEventListener('visibilitychange',()=>{if(!document.hidden)cargarVivo()});
+setInterval(()=>{if(!document.hidden){cargarVivo();recargarSiCambio()}},VIVO_MS);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden){cargarVivo();recargarSiCambio()}});
 </script></body></html>
