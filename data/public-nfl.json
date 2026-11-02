@@ -1,5 +1,5 @@
 {
-  "generado_en": "2026-11-01T21:57:56+00:00",
+  "generado_en": "2026-11-02T00:42:04+00:00",
   "fuente": "espn",
   "temporada": 2026,
   "boletos_publicos": [
@@ -49,7 +49,7 @@
       "mercado": "Moneyline",
       "seleccion": "Rams",
       "cuota_capturada": "-260",
-      "resultado": "Pendiente",
+      "resultado": "Ganada",
       "marcador": "",
       "boleto": "#2 Mixto"
     },
@@ -73,7 +73,7 @@
       "mercado": "Under",
       "seleccion": "Menos de 43.5",
       "cuota_capturada": "-115",
-      "resultado": "Pendiente",
+      "resultado": "Ganada",
       "marcador": "",
       "boleto": "#2 Mixto"
     },
@@ -244,7 +244,7 @@
       "fecha": "2026-11-01",
       "pick": "Rams",
       "rival": "Chargers",
-      "resultado": "Pendiente",
+      "resultado": "Acertado",
       "marcador": ""
     },
     {
@@ -252,7 +252,7 @@
       "fecha": "2026-11-01",
       "pick": "Chiefs",
       "rival": "Broncos",
-      "resultado": "Pendiente",
+      "resultado": "Fallado",
       "marcador": ""
     },
     {
@@ -260,7 +260,7 @@
       "fecha": "2026-11-01",
       "pick": "Patriots",
       "rival": "Dolphins",
-      "resultado": "Pendiente",
+      "resultado": "Acertado",
       "marcador": ""
     },
     {
